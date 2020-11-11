@@ -2,7 +2,8 @@
 body{
 	width: 1000px;
 	margin: auto;
-	  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+	background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+	background-size: 2000px;
 }
 
 
@@ -66,3 +67,12 @@ body{
 
 }
 
+.bottom{
+	position: relative;
+	align-items: center;
+	top:500px;
+	left:430px;
+	text-align: center;
+	width:200px;
+	border-top: 1px solid black;
+}
