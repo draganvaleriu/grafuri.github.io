@@ -2,13 +2,14 @@
 body{
 	width: 1000px;
 	margin: auto;
+
 }
 
 
 .header{
 	width: 100%;
 	height: 50px;
-	border: 1px solid transparent;
+	border-bottom: 1px solid black;
 }
 
 .header div a{
@@ -17,24 +18,49 @@ body{
 	text-decoration: none;
 }
 .centru{
-	 
-	margin: 50px 50px;
+	position: absolute;
+	z-index: -1;
+	top: 100px;
+	width: 1000px;
+	height: 100%;
 }
 
-.cerc{
-	width: 100px;
-	height: 100px;
-	background-color: red;
-	margin: 0 auto 100px auto;
-	border-radius: 50%;
+ .c1{
+  position: relative;
+  top: 213px;
+  left: 288px;
+  width: 48px;
+  height: 48px;
+  cursor: pointer; 
+  border-radius: 50%;
+ }
+
+.c2{
+  position: relative;
+  top: 251px;
+  left: 664px;
+  width: 47px;
+  height: 47px;
+  cursor: pointer; 
+  border-radius: 50%;
+ }
+.c3{
+  position: relative;
+  top: 25px;
+  left: 479px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer; 
+  border-radius: 50%;
 }
-
-.cerc:hover{
-	background-color: blue;
-	border-radius: 50%;
-
-	width: 150px;
-	height: 105px;
+.c4{
+  position: relative;
+  top:282px;
+  left: 490px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer; 
+  border-radius: 50%;
 
 }
 

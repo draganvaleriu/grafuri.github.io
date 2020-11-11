@@ -20,23 +20,45 @@
   from {background-color:#3fa0ae;}
   to {background-color: #c0d7f9;}
 }
+
+@keyframes example_2 {
+  from {background-color:#6e67a3;}
+  to {background-color: #b4afd6;}
+}
+@keyframes example_3 {
+  from {background-color:#6e67a3;}
+  to {background-color: #b4afd6;}
+}
+@keyframes example_4 {
+  from {background-color:#6e67a3;}
+  to {background-color: #b4afd6;}
+}
 .cerc1{
   animation-name: example;
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse; 
 }
-
-.Project {
-  position: relative;
-  top: 313px  ;
-  left: 334px;
-  width: 50px;
-  height: 50px;
-  cursor: pointer; 
-   
-  border-radius: 50%;
+.cerc2{
+  animation-name: example_2;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse; 
 }
+ .cerc3{
+  animation-name: example_3;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse; 
+}
+.cerc4{
+  animation-name: example_4;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse; 
+}
+
+
 .Project:hover .imgMasked {
   clip-path: circle(100px at center);
 }
@@ -52,6 +74,30 @@
   border-radius: 200px;
   border: 80px solid #3fa0ae;
   opacity: 0.2;
+
+}
+.Project2:hover .Project-hail2 {
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+  border: 80px solid #6e67a3;
+  opacity: 0.2;
+}
+.Project3:hover .Project-hail3 {
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+  border: 80px solid #6e67a3;
+  opacity: 0.2;
+
+}
+.Project4:hover .Project-hail3 {
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+  border: 80px solid #6e67a3;
+  opacity: 0.2;
+
 }
 .Project:hover .Project-name {
   left: 200%;
@@ -68,6 +114,42 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #3fa0ae;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  transition: 0.5s;
+  opacity: 0;
+}
+.Project-hail-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:  #6e67a3;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  transition: 0.5s;
+  opacity: 0;
+}
+.Project-hail-3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:  #6374a6;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  transition: 0.5s;
+  opacity: 0;
+}
+.Project-hail-4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:  #6374a6;
   width: 40px;
   height: 40px;
   border-radius: 40px;
