@@ -7,12 +7,7 @@
 	</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" type="text/css" href="buttons/prima.css">
-<script type="text/javascript">
-	function foo()
-	{
-		 window.location.href = "pages/page_teorie.html";
-	}
-</script>
+
 </head>
 <body>
 	<div class="header">
@@ -71,5 +66,23 @@
 	 	</p>
 
 	 </div>
+	 <script type="text/javascript">
+	function foo()
+	{
+		 window.location.href = "pages/page_teorie.html";
+	}
+
+	window.onscroll = function(){func()};
+	var header = document.getElementById("header");
+	var pos = header.offsetTop; 
+
+	function func()
+	{
+		if(window.pageYOffset >= pos)
+			header.classList.add("pos")
+		 
+	}
+
+</script>
 </body>
 </html> 

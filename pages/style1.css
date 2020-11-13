@@ -2,11 +2,51 @@
 body{
 	padding: 0px;
 	margin: 0px;
-}
 
- li a {
+}
+ 
+
+#menu{
+	 margin-bottom: 0px;
+	width: 250px;
+	float: left;
+	position: sticky;
+	top: 0px;
+	 
+}
+#content{
+	 margin-left: 270px;
+} 
+
+ul p{
+	margin: 0px;
+}
+ul{
+	margin: 0px;
+	padding: 0px;
+
+}
+ul li ul p {
+	padding-left: 25px;
+}
+ul li{
+	  
+	background-color: red;
+	list-style-type: none;
+	 
+}
+ul li p{
+	line-height: 36px;
+	font-size: 20px;
 	text-decoration: none;
 	color: black;
+	display: block;
+
+	 
+} 
+ul li p:hover{
+	background-color: blue;
+	cursor: url(http://www.rw-designer.com/cursor-detail/1675),auto;
 }
 .header{
 	width: 98%;
