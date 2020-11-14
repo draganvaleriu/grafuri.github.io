@@ -10,15 +10,10 @@
 				</a>
 			</div>
 		</div>
+<style type="text/css">
+	 
+</style>
 
-<script type="text/javascript">
- 
-function q()
-{
-	transition(2);
-	window.scroll(0,1000);	 
-}
-</script>
 
 </head>
 <body>
@@ -27,8 +22,8 @@ function q()
 		<div id = "menu">
 			<ul >
 				<li>
-					<div class="wrapper">
- 					 <p onclick="q()">
+					<div id="term">
+ 					 <p onclick="q(getElementById('term'))">
  					 	<span>
  					 		Terminologie
  					 	</span>
@@ -36,7 +31,7 @@ function q()
 					</div>
 				</li>
  				<li>
- 					<div class="wrapper">
+ 					<div id="grad">
  					 <p  >
  					 	<span>
  					 		Gradul unui varf
@@ -46,14 +41,14 @@ function q()
  
 				</li>
 				<li>
-					<div class="wrapper">
+					<div id="reperez">
  					 <p>
  					 	Reprezentare 
  					 </p>
 					</div> 
 					<ul class="u1">
 						<li>
-							<div class="wrapper">
+							<div id="Matricea">
  					 <p>
  					 	<span>
  					 		Matricea de adiacenta
@@ -65,7 +60,7 @@ function q()
 						</li>
 
 						<li>
-							<div class="wrapper">
+							<div id="muchii">
  					 <p >
  					 	<span>
  					 		lista de muchii
@@ -76,7 +71,7 @@ function q()
 						</li>
 						
 						<li>
-							<div class="wrapper">
+							<div id="vecini">
  					 <p>
  					 	<span>
  					 		lista de vecini
@@ -87,7 +82,7 @@ function q()
 					</ul>
 				</li>
 				<li>
-					<div class="wrapper">
+					<div id="partial">
  					 <p>
  					 	<span>
  					 		Graf partil. Subgraf. Graf complementar
@@ -97,7 +92,7 @@ function q()
 					 
 				</li>
 				<li>
-					<div class="wrapper">
+					<div id="nul">
  					 <p>
  					 	<span>
  					 		Graf nul. Graf complet. Graf regulat. Graf bipartit
@@ -107,7 +102,7 @@ function q()
 					 
 				</li>
 				<li>
-					<div class="wrapper">
+					<div id="conex1">
  					 <p>
  					 	<span>
  					 		Conexitate
@@ -116,7 +111,7 @@ function q()
 					</div>
 					<ul>
 						<li>
-							<div class="wrapper">
+							<div id="lant">
  					 <p>
  					 	<span>
  					 		Lant,ciclu
@@ -126,7 +121,7 @@ function q()
 							 
 						</li>
 						<li>
-							<div class="wrapper">
+							<div id="conex2">
  					 <p>
  					 	<span>
  					 		Graf conex. Componente conexe
@@ -136,7 +131,7 @@ function q()
 							 
 						</li>
 						<li>
-							<div class="wrapper">
+							<div id = "pad">
  					 <p>
  					 	<span>
  					 		Arbore .Padure
@@ -146,7 +141,7 @@ function q()
 							 
 						</li>
 						<li>
-							<div class="wrapper">
+							<div id="ham">
  					 <p>
  					 	<span>
  					 		Graf hamiltonian. Graf eulerian
@@ -255,5 +250,39 @@ function q()
 
 		</div>
 	</div>
+	<script type="text/javascript">
+ window.onscroll = function(){
+ 	var pos = document.documentElement.scrollTop;
+ 	if(pos > 10 && pos < 1800)
+ 		document.getElementById("term").className = "AAA";
+ 	else
+ 		document.getElementById("term").className = "";
+ 	if(pos > 1800 && pos < 2500)
+ 		document.getElementById("grad").className = "AAA";
+ 	else
+ 		document.getElementById("grad").className = "";
+ };
+ 
+ function f(){ 
+ 	if(document.documentElement.scrollTop > 10
+ 		&& document.documentElement.scrollTop < 1800)
+ 		document.getElementById("term").className = "AAA";
+ 	else
+ 		document.getElementById("term").className = "";
+}	
+  function f1(){ 
+ 	if(document.documentElement.scrollTop > 1800
+ 		&& document.documentElement.scrollTop < 3000)
+ 		document.getElementById("grad").className = "AAA";
+ 	else
+ 		document.getElementById("term").className = "";
+}	
+ 
+function q(prop)
+{ 
+
+	window.scroll(0,1000);	 
+}
+</script>
 </body>
 </html>
