@@ -62,13 +62,13 @@
 .Project:hover .imgMasked {
   clip-path: circle(100px at center);
 }
-.Project:hover .Project-hail {
+.Project:hover .Project-Pro {
   width: 200px;
   height: 200px;
   border-radius: 200px;
   opacity: 0.5;
 }
-.Project:hover .Project-hail2 {
+.Project:hover .Project-Pro2 {
   width: 200px;
   height: 200px;
   border-radius: 200px;
@@ -76,14 +76,14 @@
   opacity: 0.2;
 
 }
-.Project2:hover .Project-hail2 {
+.Project2:hover .Project-Pro2 {
   width: 200px;
   height: 200px;
   border-radius: 200px;
   border: 80px solid #6e67a3;
   opacity: 0.2;
 }
-.Project3:hover .Project-hail3 {
+.Project3:hover .Project-Pro3 {
   width: 200px;
   height: 200px;
   border-radius: 200px;
@@ -91,7 +91,7 @@
   opacity: 0.2;
 
 }
-.Project4:hover .Project-hail3 {
+.Project4:hover .Project-Pro3 {
   width: 200px;
   height: 200px;
   border-radius: 200px;
@@ -108,7 +108,7 @@
 .Project:hover .Project-name:before {
   width: 100%;
 }
-.Project-hail {
+.Project-Pro {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -120,7 +120,7 @@
   transition: 0.5s;
   opacity: 0;
 }
-.Project-hail-2 {
+.Project-Pro-2 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -132,7 +132,7 @@
   transition: 0.5s;
   opacity: 0;
 }
-.Project-hail-3 {
+.Project-Pro-3 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -144,7 +144,7 @@
   transition: 0.5s;
   opacity: 0;
 }
-.Project-hail-4 {
+.Project-Pro-4 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -156,7 +156,7 @@
   transition: 0.5s;
   opacity: 0;
 }
-.Project-hail2 {
+.Project-Pro2 {
   position: absolute;
   top: 50%;
   left: 50%;

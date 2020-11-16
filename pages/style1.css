@@ -47,6 +47,8 @@ ul li p{
 } 
 ul li p:hover{
 	background-color: blue;
+	color: white;
+	cursor: default;
 	}
 .header{
 	width: 98%;
