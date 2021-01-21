@@ -1,6 +1,7 @@
  
 body{
 	width: 1000px;
+  height: auto;
 	margin: auto;
 	background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
 	background-size: 2000px;
@@ -8,11 +9,7 @@ body{
 
 html{
   cursor: url("cursor/cursor1.cur"),auto;
-  
-
 }
-
-
 .header{
 
 	width: 100%;

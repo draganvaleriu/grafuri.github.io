@@ -2,6 +2,7 @@
 body{
 	padding: 0px;
 	margin: 0px;
+	min-width: 600px;
 
 }
  
@@ -16,42 +17,46 @@ body{
 }
 #content{
 	 margin-left: 270px;
+	 margin-right: 20px;
+	 min-width: 500px;
+	 text-align: left;
 } 
+#content p{
+	line-height: 25px;
+	font-size: 1.5em;
+}
 
-ul p{
+#menu ul p{
 	margin: 0px;
 }
-ul{
+#menu ul{
 	margin: 0px;
 	padding: 0px;
 
 }
-ul li ul p {
+#menu ul li ul p {
 	padding-left: 25px;
 }
-ul li{
+#menu ul li{
 	  
 	 
 	list-style-type: none;
 	 
 }
-ul li p{
+#menu ul li p{
 	line-height: 36px;
 	font-size: 20px;
 	text-decoration: none;
 	color: #6e6cef;
 	display: block;
-
-
-	 
 } 
-ul li p:hover{
+#menu ul li p:hover{
 	background-color: blue;
 	color: white;
 	cursor: default;
 	}
 .header{
-	width: 98%;
+	min-width:950px; 
 	height: 50px;
 	border-bottom: 1px solid black; 
 	margin: 10px;
@@ -63,8 +68,32 @@ ul li p:hover{
 } 
  
 .AAA {
-	 
-	 
 	background-color: #d8d0d0;
 	color: red;
+}
+
+.decor{
+	color:red;
+	font-size: 35px;
+	position: relative;
+	margin: 0px;
+	width: 99%;
+	border-bottom: 1px solid #ff9800;
+}
+#content ul li{
+	list-style: inherit;
+
+
+}
+#content ul li p{
+	color: black;
+}
+
+.color
+{
+	 color: #ff9800;
+}
+
+#graf1{
+	margin-left:200px;
 }
