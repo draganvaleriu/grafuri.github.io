@@ -50,7 +50,7 @@
                   </div>
                </li>
                <li>
-                  <div id="reperez" onclick="a(getElementById('trei'))">
+                  <div id="reprez" onclick="a(getElementById('trei'))">
                      <p>
                         Reprezentare 
                      </p>
@@ -254,9 +254,135 @@
             <div id="trei" class="decor">
                Reprezentarea grafurilor neorientate
             </div>
-            <div id="patru" class="decor">
+            <ul>
+            	<li class="fara">
+            		<div id ="patru" class="decor">
+            			 Matricea de adiacență
+            		</div>
+            		<div>
+            			<p>
+            				Pentru un graf neorientat <span class="color">G=(X,U)</span> cu n vârfuri, matricea de adiacență este o matrice cu n linii și n coloane și elemente din <span class="color">{0,1}</span>, cu:
+            			</p>
+            			<img src="page1_photo/mat.png">
+            			<p>
+            				<b>Exemplu</b>: Pentru graful neorientat de mai jos avem următoarea matrice de adiacență:
+            			</p>
+            			<img src="page1_photo/graf2.png">
+            		</div>
+            		<p>
+            			<b>Observații:</b>
+            		</p>
+            		<ul>
+            			<li>
+            				<p>
+            					matricea de adiacență este simetrică față de diagonala principală;
+            				</p>
+            			</li>
+            			<li>
+            				<p>
+            					elementele de pe diagonala principală sunt <b>0</b>;
+            				</p>
+            			</li>
+            			<li>
+            				<p>
+            					gradul unui vârf <b>x</b> este egal cu numărul de elemente <b>1</b> de pe linia (sau coloana) x;
+            				</p>
+            			</li>
+            			<li>
+            				<p>
+            					suma tuturor elementelor din matricea de adiacență a unui graf neorientat este egală cu dublul numărului de muchii din graf.
+            				</p>
+            			</li>
+            		</ul>
+            	</li>
+            	<li class="fara">
+            		<div class="decor">
+            			Lista de muchii
+            		</div>
+            		<img src="page1_photo/graf22.png" class="foto">
+            		<p>
+            			Lista de muchii a unui graf neorientat reprezintă o mulțime ce conține toate muchiile din graf.
+            		</p>
+            		<p>
+            			Pentru graful alăturat, lista de muchii este:
+            		</p>
+            		<p>
+            			<span class="color">U={[1,2],[1,5],[2,5],[4,5]}</span>	
+            		</p>
+            		<p>
+            			Pentru reprezentarea în memorie putem folosi:
+            		</p>
+            		<ul>
+            			<li>
+            				<p>
+            					un tablou unidimensional cu elemente de tip <span class="color">struct {int I,J;}</span>
+            				</p>
+            			</li>
+            			<li>
+            				<p> 
+            					două tablouri unidimensionale cu elemente de tip  <span class="color">int</span> 
+            				</p>
+            			</li>
+            			<li>
+            				<p>
+            					o listă alocată dinamic
+            				</p>
+            			</li>
+            			<li>
+            				<p>
+            					etc.
+            				</p>
+            			</li>
+            		</ul>
+            	</li>
+            	<li class="fara">
+            		<div class="decor">
+            			Liste de adiacențe (de vecini)
+            		</div>
+            		<img src="page1_photo/graf22.png" class="foto">
+            		<p>
+            			Pentru un graf neorientat cu <span class="color">G=(X,U)</span> se va memora numărul de vârfuri n și apoi, pentru fiecare vârf x, lista vârfurilor adiacente cu x, adică a vârfurilor y cu proprietatea că există muchia <span class="color"> [x,y]</span>.
+            		</p>
+            		<p>
+            			Pentru graful alăturat, listele de adiacență sunt:
+            		</p>
+            		<p class="text"> 
+            			<b>
+            			    1: 2 5
+						<br>2: 1 5
+						<br>3: vidă
+						<br>4: 5
+						<br>5: 1 2 4
+            			</b>
+            		</p>
+            		<p>
+            			La reprezentarea în memorie trebui avut în vedere că dimensiunile listelor de vecini sunt variabile. De aceea, este neeficientă utilizarea unor tablouri alocate static. Astfel, putem folosi:
+            		</p>
+            		<ul>
+            			<li>
+            				<p>
+            					un șir de n tablouri unidimensionale alocate dinamic;
+            				</p>
+            			</li>
+            			<li>
+            				<p>
+            					un șir de n vectori din STL;
+            				</p>
+            			</li>
+            			<li>
+            				<p>
+            					un șir de n liste simplu (dublu) înlănțuite alocate dinamic.
+            				</p>
+            			</li>
+            		</ul>
+            	</li>
+            </ul>
+            <div id=" w" class="decor">
                Graf parțial. Subgraf. Graf complementar
             </div>
+            <p>
+            	<b>Definiție</b>. Fie <span class="color">G=(X, U)</span> un graf neorientat. Se numeşte <b>graf parțial</b> al grafului G, graful neorientat <span class="color">G1=(X, U1)</span>, unde <span class="color">U1 ⊆ U</span>.
+            </p>
             <div id="cinci" class="decor">
                Graf nul. Graf complet. Graf regulat. Graf bipartit
             </div>

@@ -37,11 +37,8 @@ body{
 #menu ul li ul p {
 	padding-left: 25px;
 }
-#menu ul li{
-	  
-	 
-	list-style-type: none;
-	 
+#menu ul li,.fara { 
+	list-style-type: none;	 
 }
 #menu ul li p{
 	line-height: 36px;
@@ -80,11 +77,7 @@ body{
 	width: 99%;
 	border-bottom: 1px solid #ff9800;
 }
-#content ul li{
-	list-style: inherit;
-
-
-}
+ 
 #content ul li p{
 	color: black;
 }
@@ -96,4 +89,12 @@ body{
 
 #graf1{
 	margin-left:200px;
+}
+.foto{
+	float:right;
+}
+.text{
+	padding: 10px 0px 10px 30px;
+	background-color: #efefef;
+	width: 200px;
 }
