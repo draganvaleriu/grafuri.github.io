@@ -90,11 +90,18 @@ body{
 #graf1{
 	margin-left:200px;
 }
-.foto{
+.fotor{
 	float:right;
+}
+.fotol{
+	float :left;
 }
 .text{
 	padding: 10px 0px 10px 30px;
 	background-color: #efefef;
 	width: 200px;
+}
+.grafpart{
+	display: inline-block;
+	margin-left: 100px;
 }

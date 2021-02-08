@@ -15,6 +15,8 @@
       <noscript>
          <div><img src="https://mc.yandex.ru/watch/69464206" style="position:absolute; left:-9999px;" alt="" /></div>
       </noscript>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <title></title>
       <link rel="stylesheet" type="text/css" href="style1.css">
       <div class="header">
@@ -299,7 +301,7 @@
             		<div class="decor">
             			Lista de muchii
             		</div>
-            		<img src="page1_photo/graf22.png" class="foto">
+            		<img src="page1_photo/graf22.png" class="fotor">
             		<p>
             			Lista de muchii a unui graf neorientat reprezintă o mulțime ce conține toate muchiile din graf.
             		</p>
@@ -339,7 +341,7 @@
             		<div class="decor">
             			Liste de adiacențe (de vecini)
             		</div>
-            		<img src="page1_photo/graf22.png" class="foto">
+            		<img src="page1_photo/graf22.png" class="fotor">
             		<p>
             			Pentru un graf neorientat cu <span class="color">G=(X,U)</span> se va memora numărul de vârfuri n și apoi, pentru fiecare vârf x, lista vârfurilor adiacente cu x, adică a vârfurilor y cu proprietatea că există muchia <span class="color"> [x,y]</span>.
             		</p>
@@ -383,12 +385,336 @@
             <p>
             	<b>Definiție</b>. Fie <span class="color">G=(X, U)</span> un graf neorientat. Se numeşte <b>graf parțial</b> al grafului G, graful neorientat <span class="color">G1=(X, U1)</span>, unde <span class="color">U1 ⊆ U</span>.
             </p>
+            <p>
+            	Din definiție rezultă:
+            </p>
+            <ul>
+            	<li>
+            		<p>
+            			Un graf parțial al unui graf neorientat <span class="color">G=(V,U)</span>, are aceeaşi mulțime de vârfuri ca şi <span class="color">G</span>, iar mulțimea muchiilor este o submulțime a lui <span class="color">U</span> sau chiar <span class="color">U</span> .
+            		</p>
+            	</li>
+            	<li>
+            		<p>
+            			Fie <span class="color">G=(X, U)</span> un graf neorientat. Un graf parțial al grafului <span class="color">G</span> se obține păstrând vârfurile şi eliminând eventual nişte muchii (se pot elimina şi toate muchiile sau chiar nici una).
+            		</p>
+            	</li>
+            </ul>
+            <p>
+            	<b>Definiție</b>:  Fie <span class="color">G=(X, U)</span> un graf orientat. Se numeşte subgraf al grafului <span class="color">G</span> graful neorientat 
+            	<span class="color">G1=(X1,U1)</span> unde <span class="color">X1 ⊆ X</span> iar <span class="color">U1</span> conține toate arcele din U care au extremitățile în <span class="color">X1</span>.
+            </p>
+            <p>
+            	<b>Din definiție rezultă:</b>
+            </p>
+            <ul>
+            	<li>
+            		<p>
+            		Fie <span class="color">G=(X,U)</span> un graf orientat. Un subgraf al grafului <span class="color">G</span>, se obține ştergând eventual anumite vârfuri şi odată cu acestea şi muchiile care le admit ca extremitate (nu se pot şterge toate vârfurile deoarece s-ar obține un graf cu mulțimea vârfurilor vidă).
+            		</p>
+            	</li>
+            </ul>
+            <p>
+            	<b>Definiție</b>. Fie <span class="color">G=(X, U)</span> un graf neorientat. Se numeşte graf complementar al grafului <span class="color">G</span>, graful neorientat <span class="color">G1=(X, U1)</span>, cu proprietatea că două vârfuri 
+            	<span class="color">x</span> și <span class="color">y</span> sunt adiacente în 
+            	<span class="color">G1</span> dacă și numai dacă nu sunt adiacente în <span class="color">G</span>.
+            </p>
+            <p>
+            	<b>Exemplu:</b>
+            </p>
+            <ul >
+            	<li class="grafpart">
+            		<p> <b><u>Graful initial</u></b> </p>
+            	</li>
+            	<li class="grafpart" style="margin-left: 350px;">
+            		<p>
+            			<b><u>Graful partial</u></b>
+            		</p>
+            	</li>
+            </ul>
+            <img src="page1_photo/graf3.png" style=" 
+            	 
+            	margin-left: 80px;
+           ">
+            <img src="page1_photo/graf3.1.png"
+            style="margin-left: 150px;">
+            <p style=" 
+            	margin-left: 600px;" >S-au eliminat muchiile [1,2], [3,1]</p>
+            <ul>
+            	<li class="grafpart" >
+            		<p>
+            			<b><u>Subgraf</u></b>
+            		</p>
+            	</li>
+            	<li class="grafpart" style="margin-left: 300px;">
+            		<p>
+            			<b><u>Graf complementar</u></b>
+            		</p>
+            	</li>
+            </ul>
+            <img src="page1_photo/graf3.2.png"
+            style=" 
+            	  
+            	margin-left: 100px;
+           ">
+           <img src="page1_photo/graf3.3.png"
+           style="margin-left: 100px;">
+           <ul>
+           		<li  style="display: inline-block;
+           					width: 250px;
+           					margin-left: 50px;">
+           			<p>
+           				S-au eliminat vârfurile 3 5 și toate muchiile incidente cu ele
+           			</p>
+           		</li>
+           		<li style="display: inline-block;
+           					width: 250px;
+           					margin-left: 200px;">
+           			<p>
+           				O muchie [x,y] apare în graful complementar dacă și numai dacă nu apare în graful inițial.	
+           			</p>
+           		</li>
+           </ul> 
+            <p>
+            	<b>Observații</b>. Un graf neorientat oarecare poate avea mai multe grafuri parțiale și subgrafuri, dar un unic graf complementar.
+            </p>
+            <p>
+            	<b>Teoremă</b>: Fie <span class="color">G</span> un graf neorientat cu <span class="color">n</span> vârfuri și <span class="color">m</span> muchii. Atunci:
+            </p>
+            <ul>
+            	<li>
+            		<p>
+            			graful<span class="color"> G</span> admite<span class="color"> <math>
+ 											<semantics>
+ 										 		<mrow>
+   													<msup>
+    												<mn>2</mn>
+   															 <mi>m</mi>
+ 															  </msup>
+  														 </mrow> 
+ 															</semantic>
+													</math>
+						  </span>
+						  grafuri parțiale;
+
+            		</p>
+            	</li>
+            	<li>
+            		<p>
+            			graful <span class="color">G</span> admite<span class="color">  <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>2</mn>
+    <mi>n</mi>
+  </msup>
+  <mo>&#x2013;</mo>
+  <mn>1</mn>
+</math></span>  subgrafuri;
+            		</p>
+            	</li>
+            	<li>
+            		<p>
+            			graful <span class="color">G</span> admite un unic graf complementar.
+            		</p>
+            	</li>
+            </ul>
             <div id="cinci" class="decor">
                Graf nul. Graf complet. Graf regulat. Graf bipartit
             </div>
+            <p>
+            	<b> Definiție</b>: Un graf neorientat se numește <b>graf nul</b> dacă mulțimea muchiilor este vidă.
+            </p>
+            <p>
+            	Într-un graf nul toate vârfurile sunt izolate.
+            </p>
+            <p>
+            	Într-un graf nul toate vârfurile sunt izolate.
+            </p>
+            <p>
+            	Definiție. Fie<span class="color"> G=(X, U)</span> un graf neorientat. Graful <span class="color">G</span> se numește <b>graf complet</b> dacă oricare două vârfuri
+				distincte ale sale sunt adiacente. Un graf complet cu 
+				 <span class="color">n</span> vârfuri se notează <span class="color">K <sub>n</sub></span> .
+            </p>
+            <p>
+            	<b>Exemplu:</b> Graful următor este graful <span class="color"> K <sub>5</sub></span>.
+            </p>
+            <img src="page1_photo/graf4.png">
+            <p>
+            	Într-un graf complet cu  <span class = "color">  n</span> vârfuri sunt  <span class = "color"> 
+            	<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msubsup>
+    <mi>C</mi>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msubsup>
+  <mo>=</mo>
+  <mrow class="MJX-TeXAtom-ORD">
+    <mfrac>
+      <mrow class="MJX-TeXAtom-ORD">
+        <mi>n</mi>
+        <mo>&#x2217;<!-- ∗ --></mo>
+        <mo stretchy="false">(</mo>
+        <mi>n</mi>
+        <mo>&#x2212;<!-- − --></mo>
+        <mn>1</mn>
+        <mo stretchy="false">)</mo>
+      </mrow>
+      <mn>2</mn>
+    </mfrac>
+  </mrow>
+</math>
+</span>
+			muchii și fiecare vârf are gradul <span class = "color"> n-1</span>.
+            </p>
+            <p>
+            	<b>Propoziție:</b>Sunt
+            	<span class="color">
+            	<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>2</mn>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mfrac>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi>n</mi>
+          <mo>&#x2217;<!-- ∗ --></mo>
+          <mo stretchy="false">(</mo>
+          <mi>n</mi>
+          <mo>&#x2212;<!-- − --></mo>
+          <mn>1</mn>
+          <mo stretchy="false">)</mo>
+        </mrow>
+        <mn>2</mn>
+      </mfrac>
+    </mrow>
+  </msup>
+</math>
+	</span>
+			grafuri neorientate distincte cu <span class="color">  n</span> vârfuri.
+            </p>
+            <p>
+            	<b>Definiție</b>: Un graf în care toate nodurile au acelaşi grad se numește <b>graf regulat.</b>
+            </p>
+            <p>
+            	<b>Exemplu:</b> Graful de mai jos este regulat.
+            </p>
+            <img src="page1_photo/graf5.png">
+            <p>
+            	<b>Definiţie:</b> Un graf <span class="color">G=(X, U)</span> se numește <b>graf bipartit</b> dacă există două mulţimi nevide <span class="color">A</span> și <span class="color">B</span> astfel încât <span class="color">X=A ∪ B, A ∩ B = ∅ </span>şi orice muchie <span class="color">u</span> a lui <span class="color">G</span> are o extremitate în <span class="color">A</span> iar cealaltă în <span class="color">B</span>. Mulţimile <span class="color"> A</span> şi <span class="color">B</span> formează o partiţie a lui <span class="color">X</span>.
+            </p>
+            <p>
+            	<b>Exemplu</b>: Graful următor este bipartit. 
+            	<span class="color">A={1,2,5,7}</span> și <span class="color">B={3,4,6}</span>.
+            </p>
+            <img src="page1_photo/graf6.png">
+            <p>
+            	<b>Definiție:</b> Un graf bipartit <span class="color">G=(X,U)</span> se numește <b>bipartit complet</b> dacă pentru oricare două vârfuri<span class="color"> x ∈ A</span> și 
+            	<span class="color">y ∈ B</span>, există în graf muchia<span class="color"> [x,y]</span>; adică <span class="color">[x,y] ∈ U.</span>
+            </p>
+            <p>
+            	<b>Exemplu:</b> Graful următor este bipartit complet.
+            </p>
+            <img src="page1_photo/graf7.png">
             <div id = "sase" class="decor">
                Conexitate
             </div>
+            <ul>
+            	<li class="fara">
+            		<div class="decor">
+            			Lanț, ciclu
+            		</div>
+            		<p>
+            			<b>Definiție</b>: Se numește lanț o succesiune de vârfuri <span class="color"> L = [x1, x2, ⋯ xk]</span> cu proprietatea că oricare două vârfuri consecutive sunt adiacente.
+            		</p>
+            		<p>
+            			Vârfurile <span class="color">x <sub>1</sub></span> şi <span class="color">x <sub>k</sub></span> se numesc <b>extremitățile lanțului</b>. Numărul 
+            			<span class="color">k-1</span> se numește 
+            			<b>lungimea lanțului</b> și este numărul de muchii din care este format.
+            		</p>
+            		<p>
+            			Lanțul care conține numai vârfuri distincte, două câte două, este <b>lanț elementar</b>.
+            		</p>
+            		<p>
+            			Lanțul care conține numai muchii distincte este <b>lanț simplu</b>. Dacă muchiile unui lanț nu sunt distincte se numește <b>lanț compus</b>.
+            		</p>
+            		<p>
+            			<b>Definiție:</b> Se numește ciclu un lanț simplu în care primul vârf este identic cu ultimul. Dacă toate vârfurile sunt distincte, mai puțin primul și ultimul, se numește <b>ciclu elementar.</b>
+            		</p>
+            		<p>
+            			<b>Lungimea unui ciclu</b> este egală cu numărul de muchii din ciclu. Lungimea minimă a unui ciclu este <b>3</b>.
+            		</p>
+            		<p>
+            			Un ciclu se numește <b>par</b> dacă lungimea sa este pară, respectiv <b>impar</b> în caz contrar.
+            		</p>
+            		<p>
+            			Un graf neorientat care nu conține niciun ciclu se numește <b>aciclic</b>.
+            		</p>
+            		<p>
+            			<b>Exemple</b>: În graful de mai jos:
+            		</p>
+            		<img src="page1_photo/graf8.png">
+            		<ul>
+            			<li>
+            				<p>
+            					<span class="color">  [2,4,1,3,5,7] </span> este un lanț elementar
+            				</p>
+            			</li>
+            			<li>
+            				<p>
+            					<span class="color">[3,5,7,6,5,1] </span> este un lanț neelementar, dar simplu
+            				</p>
+            			</li>
+            			<li>
+            				<p>
+            					<span class="color">[2,3,5,7,6,5,3,1]</span> este un lanț compus
+            				</p>
+            			</li>
+            			<li>
+            				<p>
+            					<span class="color">[1,5,3,2,4,1] </span> este un ciclu elementar
+            				</p>
+            			</li>
+            			<li>
+            				<p>
+            					<span class="color">[1,3,5,7,6,5,1] </span> este un ciclu neelementar
+            				</p>
+            			</li>
+            			<li class="fara">
+            				<div class="decor">
+            					Graf conex. Componente conexe
+            				</div>
+            				<p>
+            					<b>Definiție:</b> Un graf neorientat se numește <b>graf conex</b> dacă pentru oricare două vârfuri <span class="color">x</span> și <span class="color">y</span> diferite ale sale, există cel puțin un lanț care le leagă, adică 
+            					<span class="color">x</span> este extremitatea inițială și <span class="color">y</span> este extremitatea finală.
+            				</p>
+            				<p>
+            					Un graf cu un singur nod este, prin definiție, conex.
+            				</p>
+            				<p>
+            					<b>Definiție</b>: Se numește componentă conexă a unui graf<span class="color"> G = (X,U)</span> un subgraf <span class="color">H = (Y, V),</span> conex, al lui<span class="color"> G</span> care are proprietatea că nu există nici un lanț în <span class="color">G</span> care să lege un vârf din <span class="color">Y</span> cu un vârf din <span class="color">X – Y</span>.
+            				</p>
+            				<p>
+            					Subgraful <span class="color"> H</span> este conex și maximal cu această proprietate (dacă s-ar mai adăuga un vârf nu ar mai fi conex.)
+            				</p>
+            				<p>
+            					Un graf este conex dacă admite o singură componentă conexă.
+            				</p>
+            				<p>
+            					<b>Exemple:</b>
+            				</p>
+            				<p>
+            					Graful următor este conex:
+            				</p>
+            				<img src="page1_photo/graf8.png">
+            				<p>
+            					Graful următor nu este conex și are 4 componente conexe.
+            				</p>
+            				<img src="page1_photo/graf9.png">
+            				<p>
+            					<b>Definiție</b>: Un graf este <b>biconex</b> dacă este conex şi pentru orice vârf eliminat subgraful generat îşi păstrează proprietatea de conexitate
+            				</p>
+            			</li>
+            		</ul>
+            	</li>
+            </ul>
          </div>
       </div>
       <script src="javascript.js"></script>
