@@ -323,11 +323,11 @@ int bfs(int start)
             		</p>
             	</li>
             </ul>
-            <div class="decor">
+           <p style="text-align: center;font-size: 35px">
             	<b>Determinarea unor lanțuri</b>
-            </div>
+            </p>
             <p>
-            	entru a determina un lanț cu extremitățile în nodurile <span class="color">x y</span>, vom realiza o parcurgere pornind de exemplu din <span class="color">x</span>. Dacă se cere un lanț de lungime minimă, vom realiza neapărat o parcurgere în lățime.
+            	Pentru a determina un lanț cu extremitățile în nodurile <span class="color">x y</span>, vom realiza o parcurgere pornind de exemplu din <span class="color">x</span>. Dacă se cere un lanț de lungime minimă, vom realiza neapărat o parcurgere în lățime.
             </p>
             <p>
             	Pentru determinarea lanțului vom construi și arborele de parcurgere.
@@ -335,7 +335,57 @@ int bfs(int start)
             <p>
             	În timpul parcurgerii, când avem nodul curent <span class="color">k</span> și am stabilit că nodul <span class="color">p</span> este adiacent cu <span class="color">k</span> și nevizitat (deci urmează a fi parcurs), vom realiza și operația: <span class="color">t[p] = k</span>;, unde<span class="color"> t</span> este vectorul de tați al arborelui de parcurgere.
             </p>
-        </div>
+            <p>
+            	Lanțul propriu-zis se va reconstitui din vectorul de tați al arborelui. În secvența de mai jos considerăm că parcurgerea a început din vârful <span class="color">x</span>. Nodurile sunt afișate de la y spre rădăcina <span class="color">x</span>, deci ar putea fi necesar să fie afișate în ordine inversă (de exemplu, să le memorăm într-un tablou și să afișăm invers elementele tabloului).
+            </p>
+            <div style=" font-size: 25px;padding:20px ; 	text-align:left;white-space: pre; border-radius: 10px;"  class="color2">int p = y;
+while(p != 0)
+{
+    cout << p;
+    p = t[p];
+} 
+</div>
+            <p style="text-align: center;font-size: 35px">
+            	<b>Verificarea proprietății de graf bipartit</b>
+            </p>
+            <p>
+            	Un graf este bipartit dacă și numai dacă nu are cicluri de lungime impară. Pentru verificare, vom realiza o parcurgere în adâncime pornind dintr-un vârf oarecare, de exemplu <span class="color">1</span>. Pentru a identifica existența unui ciclu de lungime impară, vom marca nodurile vizitate alternativ cu <span class="color">1</span> sau <span class="color">2</span>, astfel:
+            </p>
+
+           <ul>
+           	<li>
+           		 <p>
+            	marcăm nodul curent cu valoare <span class="color">x</span>
+            	</p>
+           	</li>
+           	<li>
+           		<p>
+           			identificăm vecinii nodului curent
+           		</p>
+           	</li>
+           	<ul>
+           		<li>
+           			<p>
+           				dacă nodul vecin nu a fost încă vizitat, îl marcăm cu cealaltă valoare <span class="color">(3-x)</span> și continuăm parcurgerea cu el
+           			</p>
+           		</li>
+           		<li>
+           			<p>
+           				dacă nodul vecin a fost deja vizitat, acolo se închide un ciclu. Dacă la vizitare acest nod a fost marcat tot cu valoarea  <span class="color">x</span>, atunci acel ciclu are lungime impară, deci graful nu este bipartit.
+           			</p>	
+           		</li>
+           	</ul>
+           </ul>
+
+           <p>
+           	Dacă graful nu este conex, procedăm similar pentru fiecare componentă conexă.
+           </p>
+           <p>
+           	La final, dacă graful este bipartit, modul în care am marcat nodurile ne dau și cele două submulțimi de noduri ale grafului bipartit. Mai precis, nodurile marcate cu <span class="color">1</span> fac parte din prima submulțime, iar cele marcate cu <span class="color">2</span> fac parte din a doua submulțime.
+           </p>
+
+</div>
+       
         <div class="bottom">
       <p class="name">
          <b>Dragan Valeriu</b>
