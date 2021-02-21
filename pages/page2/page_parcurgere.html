@@ -17,7 +17,7 @@
          <div id = "menu">
             <ul >
                <li>
-                  <div id="term">
+                  <div id="term" style="margin-top: 10px;">
                      <p onclick="b(0)">
                         <span>
                         Parcurgerea în adâncime
@@ -26,7 +26,7 @@
                   </div>
                </li>
                <li>
-                  <div id="grad" onclick="a(getElementById('unu'))">
+                  <div id="grad" onclick="a(getElementById('doi'))"style="margin-top: 10px;" >
                      <p  >
                         <span>
                        Parcurgerea în lățime
@@ -35,7 +35,7 @@
                   </div>
                </li>
                <li>
-                  <div id="reprez" onclick="a(getElementById('doi'))">
+                  <div id="reprez" onclick="a(getElementById('doi'))" style="margin-top: 10px;">
                      <p>
                        Aplicații ale parcurgerii grafurilor
                      </p>
@@ -89,18 +89,22 @@
             	<b>Observatie:</b>  Dacă graful nu este conex, nu ser vor vizita toate vârfurile. 
             </p>
             <img src="page2_photo/graf.gif"
-            width="690" height="345">
-            <p> 
+            width="690" height="345" style="border-radius: 10px;">
+            <p > 
             	<b>Parcurgerea din nodul 0 :</b>
             </p>
-            <p class="color2" style=" width:200px; ">
-            	<span class="color"> 0  1  3  4  2</span>
+            <p class="color2" style=" font-size: 30px; display: inline-block; margin-top:10px; 
+            padding: 10px;	margin-left: 20px; ">
+            	<span class="color" style="white-space: pre;
+            	">0  1  3  4  2</span>
             </p>
             <p> 
             	<b>Parcurgerea din nodul 1 :</b>
             </p>
-            <p class="color2" style=" width:200px; ">
-            	<span class="color"> 1  0  2  3  4</span>
+          <p class="color2" style=" font-size: 30px; display: inline-block; margin-top:10px; 
+            padding: 10px;	margin-left: 20px; ">
+            	<span class="color" style="white-space: pre;
+            	">1  0  2  3  4</span>
             </p>
             <p>
             	Pentru implementarea algoritmului se foloseşte un vector caracteristic pentru memorarea faptului că un anume vârf a fost sau nu vizitat, la un anumit moment al parcurgerii:
@@ -140,15 +144,15 @@
             			</li>
             		</ul>
             		<br>
-            		<p>
-            			<b>Implementare C++</b>
-            		</p>
+            		<p style="margin-top: 40px; margin-left: 30px; font-size: 40px;text-align: center">
+            	<b>Implementare C++</b>
+            </p>
             <p>
-            	<div style=" font-size: 25px;padding-left:20px ; 	text-align:left;white-space: pre;"  class="color2"> 
+            	<div style=" font-size: 25px;padding:20px ; 	text-align:left;white-space: pre; border-radius: 10px;"  class="color2"> 
 void dfs(int k)
 {
     v[k] = 1; <span class="comentariu"> //vizitam varful curent x</span>
-    for(int i = 0;i < n; i++) <span class="comentariu">// determinam vecinii  nevizitati ai lui x</span>
+    for(int i = 0;i < n; i++) <span class="comentariu">//determinam vecinii nevizitati ai lui x</span>
     if(a[k][i] == 1 && v[i] == 0)
     {
       dfs(i); <span class="comentariu">// continuam parcurgerea cu vecinul curent i</span>
@@ -156,7 +160,191 @@ void dfs(int k)
 }
 </div>
             </p>
+            <div class="decor">
+            	 
+            		<b>Parcurgerea in latime</b>
+            	 
+            </div>
+            <p>
+            	Se parcurge vârful de start, apoi vecinii acestuia, apoi vecinii nevizitați ai acestora, etc, până când sunt vizitate toate vârfurile accesibile. Practic, pentru a stabili ordinea de vizitare se folosește o coadă, iar pentru a stabili dacă un vârf a fost sau nu vizitat se foloseşte un vector caracteristic.
+            </p>
+            <p>
+            	<b>Algoritmul este:</b>
+            </p>
+            <ul>
+            	<li>
+            		<p>
+            			adaugăm în coadă vârful inițial și îl vizităm
+            		</p>
+            	</li>
+            	<li>
+            		<p>
+            			cât timp coada este nevidă
+            		</p>
+            		<ul>
+            			<li>
+            				<p>
+            					extragem un element din coadă
+            				</p>
+            			</li>
+            			<li>
+            				<p>
+            					determinăm vecinii nevizitați ai vârfului extras, îi vizităm și îi adăugăm în coadă
+            				</p>
+            			</li>
+            			<li>
+            				<p>
+            					eliminăm elementul din coadă
+            				</p>
+            			</li>
+            		</ul>
+            	</li>
+            </ul>
+
+
+			<img src="page2_photo/graf2.gif"
+            width="690" height="345" style="border-radius: 10px; margin-top: 30px;">
+            <p>
+            	<b>
+            		Parcurgerea din nodul 0 :
+            	</b>
+            </p>
+           <p class="color2" style=" font-size: 30px; display: inline-block; margin-top:10px; 
+            padding: 10px;	margin-left: 20px; ">
+            	<span class="color" style="white-space: pre;"> 0  1  2  3  4</span>
+            </p>
+
+            <p style="margin-top: 40px; margin-left: 30px; font-size: 40px;text-align: center">
+            	<b>Implementare C++</b>
+            </p>
+            <p>
+            	Funcţia de mai jos presupune că un graf cu n vârfuri este memorat prin intermediul matricei de adiacenţă, vectorul <span class="color"> x[]</span> reprezintă coada, vectorul <span class="color">v[]</span>, aceste variabile fiind declarate global. Funcţia returnează numărul de elemente care au fost vizitate.
+            </p>
+            <div style=" font-size: 25px;padding:20px ; 	text-align:left;white-space: pre; border-radius: 10px;"  class="color2"> 
+int bfs(int start)
+{
+  int i, k, st, dr;
+ <span class="comentariu">//initializez coada</span>
+  st = dr= 0;
+  x[0] = start;
+  v[start] = 1;<span class="comentariu">//vizitez varful initial</span>
+  while(st <= dr)<span class="comentariu">//cat timp coada nu este vida</span>
+  {
+    k = x[st];<span class="comentariu">//preiau un element din coada</span>
+    for(i = 0;i < n; i++)<span class="comentariu">//parcurg varfurile</span>
+      if(v[i] == 0 && a[k][i] == 1)<span class="comentariu">//daca i este vecin </span>
+      {                            <span class="comentariu">//cu k si nu este vizitat</span>
+        v[i] = 1;<span class="comentariu">//il vizitez</span>
+        x[++dr] = i;//<span class="comentariu">il adaug in coada</span>
+      }
+    st++;<span class="comentariu">//sterg din coada</span>
+  }
+  return dr;<span class="comentariu">//returnam numarul de varfuri vizitate</span>
+}
+            </div>
+            <div class="decor" style="padding-top: 40px;">
+            	<b>
+            		Aplicații ale parcurgerii grafurilor
+            	</b>
+            </div>
+            <p>
+            	Parcurgerea grafurilor neorientate poate fi folosită în rezolvarea unei game largi de probleme: verificarea conexității unui graf, determinarea componentelor conexe ale unui graf, determinarea unor lanțuri în graf, verificarea faptului că un graf este bipartit, etc.
+            </p>
+            <p style="text-align: center;font-size: 35px">
+            	<b>Verificarea conexității</b>
+            </p>
+            <p>
+            	<b>Definiție</b>: Un graf se numește <b>conex</b> dacă între oricare două vârfuri există cel puțin un lanț.
+            </p>
+            <p>
+            	Pentru a verifica dacă un graf este conex, putem folosi oricare metodă de parcurgere, astfel:
+            </p>
+            <ul>
+            	<li>
+            		<p>	
+            			stabilim un vârf de start
+            		</p>
+            	</li>
+            	<li>
+            		<p>
+            			realizăm o parcurgere pornind din vârful de start
+            		</p>
+            	</li>
+            	<li>
+            		<p>
+            			la final verificăm dacă au fost parcurse toate vârfurile, folosind vectorul v de mai sus; în caz afirmativ, graful este conex, altfel graful nu este conex.
+            		</p>
+            	</li>
+            </ul>
+            <p style="text-align: center;font-size: 35px">
+            	<b>
+            		Determinarea componentelor conexe
+            	</b>
+            </p>
+            <p>
+            	<b>Definiție</b>: Se numește componentă conexă într-un graf neorientat un subgraf conex și maximal cu această proprietate.
+            </p>
+            <p>
+            	Determinarea componentelor conexe se poate face folosind un algoritm de parcurgere. În vectorul v vârfurile vizitate se vor marca cu valori <span class="color"> 1, 2,</span> etc. Fiecare valoare <span class="color">v[i]</span> reprezintă componenta conexă din care face parte vârful <span class="color">i</span>.
+            </p>
+            <ul>
+            	<li>
+            		<p>
+            			<span class="color">nrc = 0</span>
+            		</p>
+            	</li>
+            	<li>
+            		<p>
+            			parcurgem vârfurile
+            		</p>
+            	</li>
+            	<ul>
+            		<li>
+            			<p>
+            				dacă vârful curent nu este vizitat
+            			</p>
+            		</li>
+            		<ul>
+            			<li>
+            				<p>
+            					incrementăm <span class="color">nrc</span> cu <span class="color">1</span>
+            				</p>
+            			</li>
+            			<li>
+            				<p>
+            					parcurgem graful pornind din vârful curent și marcăm în vectorul <span class="color">v[]</span> vârfurile parcurse cu <span class="color"> nrc</span>
+            				</p>
+            			</li>
+            		</ul>
+            	</ul>
+            	<li>
+            		<p>
+            			la final, <span class="color">nrc</span> reprezintă numărul de componente conexe, și toate vârfurile din aceiași componentă sunt marcate în <span class="color">v[]</span> cu aceiași valoare.
+            		</p>
+            	</li>
+            </ul>
+            <div class="decor">
+            	<b>Determinarea unor lanțuri</b>
+            </div>
+            <p>
+            	entru a determina un lanț cu extremitățile în nodurile <span class="color">x y</span>, vom realiza o parcurgere pornind de exemplu din <span class="color">x</span>. Dacă se cere un lanț de lungime minimă, vom realiza neapărat o parcurgere în lățime.
+            </p>
+            <p>
+            	Pentru determinarea lanțului vom construi și arborele de parcurgere.
+            </p>
+            <p>
+            	În timpul parcurgerii, când avem nodul curent <span class="color">k</span> și am stabilit că nodul <span class="color">p</span> este adiacent cu <span class="color">k</span> și nevizitat (deci urmează a fi parcurs), vom realiza și operația: <span class="color">t[p] = k</span>;, unde<span class="color"> t</span> este vectorul de tați al arborelui de parcurgere.
+            </p>
         </div>
+        <div class="bottom">
+      <p class="name">
+         <b>Dragan Valeriu</b>
+      </p>
+      <p>
+         Colegiul National de Informatica "Spiru Haret"
+      </p>
+      <p style="margin-bottom: 10px;">Proiect atestat   2020-2021</p>
+    </div>
          <script src="../page1/javascript.js"></script>
 </body>
 </html>
