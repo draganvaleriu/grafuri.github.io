@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style2.css">
+	<link rel="stylesheet" type="text/css" href="../page1/style1.css">
+	<div class="header">
+         <div>
+            <a href=" ../../index.html">
+            Grafuri Neorientate
+            </a>
+         </div>
+      </div>
+</head>
+<body>
+ <div id = "page">
+         <div id = "menu">
+            <ul >
+               <li>
+                  <div id="term">
+                     <p onclick="b(0)">
+                        <span>
+                        Parcurgerea în adâncime
+                        </span>
+                     </p>
+                  </div>
+               </li>
+               <li>
+                  <div id="grad" onclick="a(getElementById('unu'))">
+                     <p  >
+                        <span>
+                       Parcurgerea în lățime
+                        </span>
+                     </p>
+                  </div>
+               </li>
+               <li>
+                  <div id="reprez" onclick="a(getElementById('doi'))">
+                     <p>
+                       Aplicații ale parcurgerii grafurilor
+                     </p>
+                  </div>
+                 
+               </li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+         <div id = "content">
+           <p>
+           	Prin parcurgerea unui graf neorientat se înţelege examinarea în mod sistematic a vârfurilor, plecând dintr-un vârf dat <b>start </b>, astfel încât fiecare vârf accesibil din <b>start</b> pe muchii incidente două câte două să fie vizitat o singură dată. Trecerea de la un vârf <b>x</b> la altul se face prin examinarea, într-o anumită ordine a vecinilor săi.
+           </p>
+            <div id="unu" class="decor"><b>Parcurgerea în adâncime</b></div>
+            <p>
+            	Parcurgerea în adâncime reprezintă explorarea “naturală” a unui graf neorientat. Este foarte asemănătoare cu modul în care un turist vizitează un oraș în care sunt obiective turistice (vârfurile grafului) și căi de acces între obiective (muchiile). Vizitarea orașului va avea loc din aproape în aproape: se pleacă de la un obiectiv de pornire, se continuă cu un obiectiv învecinat cu acesta, apoi unul învecinat cu al doilea, etc.
+            </p>
+            <p>
+            	<b>Parcurgerea în adâncime se face astfel:</b>
+            </p>
+            <ul>
+            	<li>
+            		<p>
+            			Se începe cu un vârf inițial <span class="color"> x</span>, care este în acest moment <b>vârf curent</b>.
+            		</p>
+            	</li>
+            	<li>
+            		<p>
+            			Vârful <span class="color">x</span> se vizitează. Se determină primul său vecin nevizitat <span class="color">y</span> al lui <span class="color">x</span>, care devine vârf curent.
+            		</p>
+            	</li>
+            	<li>
+            		<p>
+            			Apoi se vizitează primul vecin nevizitat al lui <span class="color">y</span>, şi aşa mai departe, mergând în adâncime, până când ajungem la un vârf care nu mai are vecini nevizitați. Când ajungem într-un astfel de vârf, ne întoarcem la “părintele” acestuia – vârful din care am ajuns în acesta.
+            		</p>
+            	</li>
+            	<li>
+            		<p>
+            			Dacă acest vârf mai are vecini nevizitați, alegem următorul vecin nevizitat al său și continuam parcurgerea în același mod.
+            		</p>
+            	</li>
+            	<li>
+            		<p>
+            			Dacă nici acest vârf nu mai are vecini nevizitați, revenim în vârful său părinte și continuăm în același mod, până când toate vârfurile accesibile din vârful de start sunt vizitate.
+            		</p>
+            	</li>
+            </ul>
+ 
+            <p>
+            	<b>Observatie:</b>  Dacă graful nu este conex, nu ser vor vizita toate vârfurile. 
+            </p>
+            <img src="page2_photo/graf.gif"
+            width="690" height="345">
+            <p> 
+            	<b>Parcurgerea din nodul 0 :</b>
+            </p>
+            <p class="color2" style=" width:200px; ">
+            	<span class="color"> 0  1  3  4  2</span>
+            </p>
+            <p> 
+            	<b>Parcurgerea din nodul 1 :</b>
+            </p>
+            <p class="color2" style=" width:200px; ">
+            	<span class="color"> 1  0  2  3  4</span>
+            </p>
+            <p>
+            	Pentru implementarea algoritmului se foloseşte un vector caracteristic pentru memorarea faptului că un anume vârf a fost sau nu vizitat, la un anumit moment al parcurgerii:
+            </p>
+            <ul>
+            	<li>
+            		<p>
+            			<span class="color">v[i] = 0</span>, vârful <span class="color">i</span> nu a fost (încă) vizitat
+            		</p>
+            	</li>
+            	<li>
+            		<p>	
+            			<span class="color">v[i] = 1</span>, vârful <span class="color">i</span> a fost vizitat
+            		</p>
+            		</li>
+
+            	</ul>
+            	<br>
+            	<p>
+            			Pentru a determina ordinea în care se parcurg nodurile care pot fi vizitate, se folosește o stivă:
+            		</p>
+            		<ul>
+            			<li>
+            				<p>
+            					se analizează mereu nodurile adiacent cu nodul din vârful stivei
+            				</p>
+            			</li>
+            			<li>
+            				<p>
+            					dacă pentru nodul din vârful stivei găsim un vecin nevizitat, adăugăm nodul vecin pe stivă
+            				</p>
+            			</li>
+            			<li>
+            				<p>
+            					dacă pentru nodul din vârful stivei nu mai găsim niciun vecin nevizitat, îl eliminăm de pe stivă
+            				</p>
+            			</li>
+            		</ul>
+            		<br>
+            		<p>
+            			<b>Implementare C++</b>
+            		</p>
+            <p>
+            	<div style=" font-size: 25px;padding-left:20px ; 	text-align:left;white-space: pre;"  class="color2"> 
+void dfs(int k)
+{
+    v[k] = 1; <span class="comentariu"> //vizitam varful curent x</span>
+    for(int i = 0;i < n; i++) <span class="comentariu">// determinam vecinii  nevizitati ai lui x</span>
+    if(a[k][i] == 1 && v[i] == 0)
+    {
+      dfs(i); <span class="comentariu">// continuam parcurgerea cu vecinul curent i</span>
+    }
+}
+</div>
+            </p>
+        </div>
+         <script src="../page1/javascript.js"></script>
+</body>
+</html>

@@ -94,14 +94,7 @@ window.onscroll = function(){
  	 else{
  	 	document.getElementById("ham").className = "";
  	 }
- 	 
- 	 
- 	 
- 	 
- 	 
- 	 	 
-  
- 	 
+ 	  
  };
  
  function a(elem) {

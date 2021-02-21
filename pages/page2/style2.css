@@ -1,0 +1,15 @@
+ 
+ @font-face{
+ 	font-family: 'myfont';
+ 	src:url("../../fonts/Anonymous Pro.ttf");
+ }
+
+ .color2  {
+ 	background-color: #ebebe9;
+ 	text-align: center;
+ 	border-radius: 5px;
+ 	font-family: 'myfont',sans-serif;
+ }
+ .comentariu{
+ 	color: green;
+ }
