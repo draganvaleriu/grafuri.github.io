@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../page1/style1.css">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<div class="header">
+         <div>
+            <a href=" ../../index.html" style="font-size: 40px;">
+            Grafuri Neorientate
+            </a>
+         </div>
+  </div>
+</head>
+<style type="text/css">
+	#content{
+		margin-left: 50px;
+	}
+</style>
+<body>
+	<div id = "content">
+    <img src="../../img/arrow.png" class="arr" onclick="arrow()">
+		<p>
+			<b>Problema comis voiajorului</b> este o problemă celebră de informatică: Un comis-voiajor (agent comercial) trebuie viziteze <b>n</b> orașe. Cunoscându-se șoselele existente între orașe, să se determine o modalitate (toate modalitățile) prin care comis-voiajorul poate parcurge fiecare oraș o singură dată și se întoarce în orașul de plecare.
+		</p>
+		<p>
+			Dacă asociem problemei un graf neorientat, constatăm că trebuie să determinăm un (toate) ciclu elementar care trece prin toate vârfurile grafului. Un astfel de ciclu se numește <b>ciclu hamiltonian.</b>
+		</p>
+		<p>
+			<b>Definiții:</b>
+		</p>
+		<ul>
+			<li>
+				<p>
+					Într-un graf neorientat, se numește 
+					<b>lanț hamiltonian</b> un lanț elementar care conține toate vârfurile grafului.
+				</p>
+			</li>
+			<li>
+				<p>
+					Într-un graf neorientat, se numește 
+					<b>ciclu hamiltonian</b> un ciclu elementar care conține toate vârfurile grafului.
+				</p>
+			</li>
+			<li>
+				<p>
+					Un graf neorientat se numește <b>graf hamiltonian</b> dacă conține un ciclu hamiltonian.
+				</p>
+			</li>
+		</ul>
+		<p>
+			Pentru un graf orientat se pot definii noțiuni similare, de <b>drum hamiltonian</b> și <b>circuit hamiltonian</b>
+		</p>
+		<p>
+			<b>Exemplu:</b>
+		</p>
+		<img src="page3_photo/g1.png" style="margin-left: 50px;">
+		<p>
+			În graful de mai sus sunt evidențiate cu rosu muchiile care fac parte dintr-un ciclu hamiltonian: <span class="color"> (1, 2, 5, 4, 6, 3)</span>.
+		</p>
+		<p>
+			În anumite condiții se poate stabili că un graf dat este hamiltonian. Dar aceste condiții sunt “de suficiență”. Dacă nu sunt îndeplinite, nu înseamnă că graful nu este hamiltonian!
+		</p>
+		<p>
+			<b>Teoreme:</b>
+		</p>
+		<ul>
+			<li>
+				<p>
+					Fie<span class="color"> G = (X, U)</span> un graf neorientat cu <span class="color">n</span> vârfuri și un lanț hamiltonian
+<span class="color">
+					<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>v</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>v</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>,</mo>
+  <mo>&#x22EF;<!-- ⋯ --></mo>
+  <mo>,</mo>
+  <msub>
+    <mi>v</mi>
+    <mi>n</mi>
+  </msub>
+</math>
+				</span> Dacă <span class="color">
+					<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>v</mi>
+    <mn>1</mn>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mo>+</mo>
+  <mi>d</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>v</mi>
+    <mi>n</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mo>&#x2265;<!-- ≥ --></mo>
+  <mi>n</mi>
+</math>
+</span>
+atunci graful este hamiltonian, unde <span class="color"> d(x)</span> este gradul vârfului  <span class="color">x</span>.
+
+				</p>
+			</li>
+				<li>
+					<p>
+					Fie G=(X,U) un graf neorientat cu n vârfuri. Dacă pentru orice pereche de vârfuri neadiacente distincte <span class="color"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>v</mi>
+    <mi>i</mi>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>v</mi>
+    <mi>j</mi>
+  </msub>
+</math> </span> avem relația <span class="color"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>v</mi>
+    <mi>i</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mo>+</mo>
+  <mi>d</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>v</mi>
+    <mi>j</mi>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mo>&#x2265;<!-- ≥ --></mo>
+  <mi>n</mi>
+</math></span>, atunci graful este hamiltonian.
+				</p>
+			</li>
+			<li>
+				<p>
+					Un graf neorientat în care gradul fiecărui vârf este mai mare sau egal cu jumătate din numărul de vârfuri este hamiltonian.
+
+				</p>
+			</li>
+		</ul>
+	</div>
+     <div class="bottom">
+      <p class="name">
+         <b>Dragan Valeriu</b>
+      </p>
+      <p>
+         Colegiul National de Informatica "Spiru Haret"
+      </p>
+      <p style="margin-bottom: 10px;">Proiect atestat   2020-2021</p>
+    </div>
+      <script src="../../javascript/javascript_1.js"></script>
+</body>
+</html>

@@ -118,7 +118,7 @@ html{
  border-radius: 10px;
  
 }
-.m1 :hover{
+.bred :hover{
      background-color: bisque;
      cursor: url("cursor/cursor2.cur"),auto;
  

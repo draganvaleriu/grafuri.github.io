@@ -2,10 +2,11 @@
 <html>
 <head>
 	<title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="style2.css">
 	<link rel="stylesheet" type="text/css" href="../page1/style1.css">
 	<div class="header">
-         <div>
+         <div style="font-size: 40px;">
             <a href=" ../../index.html">
             Grafuri Neorientate
             </a>
@@ -44,6 +45,7 @@
             </ul>
          </div>
          <div id = "content">
+            <img src="../../img/arrow.png" class="arr" onclick="arrow()">
            <p>
            	Prin parcurgerea unui graf neorientat se înţelege examinarea în mod sistematic a vârfurilor, plecând dintr-un vârf dat <b>start </b>, astfel încât fiecare vârf accesibil din <b>start</b> pe muchii incidente două câte două să fie vizitat o singură dată. Trecerea de la un vârf <b>x</b> la altul se face prin examinarea, într-o anumită ordine a vecinilor săi.
            </p>
@@ -149,8 +151,8 @@
 void dfs(int k)
 {
     v[k] = 1; <span class="comentariu"> //vizitam varful curent x</span>
-    for(int i = 0;i < n; i++) <span class="comentariu">//determinam vecinii nevizitati ai lui x</span>
-    if(a[k][i] == 1 && v[i] == 0)
+    for(int i = 0;i < n; i++) <span class="comentariu">//determinam vecinii</span> 
+    if(a[k][i] == 1 && v[i] == 0)<span class="comentariu"> //nevizitati ai lui x</span>
     {
       dfs(i); <span class="comentariu">// continuam parcurgerea cu vecinul curent i</span>
     }
@@ -393,5 +395,6 @@ while(p != 0)
       <p style="margin-bottom: 10px;">Proiect atestat   2020-2021</p>
     </div>
          <script src="javascript1.js"></script>
+           <script src="../../javascript/javascript_1.js"></script>
 </body>
 </html>

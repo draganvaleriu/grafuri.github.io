@@ -19,10 +19,27 @@
 		Grafuri Neorientate
 	</title>
 <link rel="stylesheet" type="text/css" href="style.css">
-
+ 
 <link rel="stylesheet" type="text/css" href="buttons/prima.css">
 
+<style type="text/css">
+	 
+	.dropdown{
+ 		list-style: none;
+ 		padding: 0px;
+
+	}
+	 .drop{
+	 	margin-top: 20px;
+	 	margin-right: -10px; 
+	 }
+	 .style1
+	 {
+	 	display: none;
+	 }
+</style>
 </head>
+
 <body>
 	<div class="header">
 			<div>
@@ -31,27 +48,50 @@
 				 	<li id = "unu" class="m"> 
 				 		<a href="#" id="mm">Grafuri Neorientate</a>
 				 	</li>
-				
-				 	<li class="m m1">
-				 		<a href=""  class="m2">
-				 		Graf Eulerian
-				 		</a>
+					
+				 	<li class="m m1" >
+				 		<div class="bred"><a href="#" class="m2 drop" onclick="myFunction()" style=" ">
+				 		 Mai multe
+   							 <img src="img/arrow2.png" width="15px" height="13px">
+   							</a>
+   							 	</div>
+   							 <ul class="dropdown style1" id="dr">
+   							 	<li class="drop">
+   							 			<div class="bred" style="margin-left:  10px;">
+   							 				<a href="pages/page5/page_probleme.html" class="m2" style=" ">Probleme</a></div>
+   							 		 
+   							 	</li>
+   							 	<li class="drop">
+   							 			<div class="bred" style="margin-left:  10px;">
+   							 				<a href="" class="m2" style=" ">Teste</a></div>
+   							 		 
+   							 	</li>
+   							 	 
+   							 </ul>
+				 		 
+				 
 				 	</li>
 				 	<li class="m m1">
-				 		<a href=""  class="m2"> 
+				 		<div class="bred"><a href="pages/page4/page_eul.html"  class="m2">
+				 		Graf Eulerian
+				 		</a></div>
+				 	</li>
+				 	<li class="m m1">
+				 		<div class="bred"><a href="pages/page3/page_ham.html"  class="m2"> 
 				 		Graf Hamiltonian
 				 		</a>
+				 	</div>
 				 	</li>
 
 				 	 <li class="m m1">
-				 		<a href="pages/page2/page_parcurgere.html"  class="m2">
-				 		Parcurgerea</a>
+				 		<div class="bred"><a href="pages/page2/page_parcurgere.html"  class="m2">
+				 		Parcurgerea</a></div>
 				 	</li>
 				 	 <li class="m m1">
-				 	<a href="pages/page1/page_teorie.html" class="m2">
+				 	<div class="bred"><a href="pages/page1/page_teorie.html" class="m2">
 				 	 	Teorie
 				 		 
-				 	</a>
+				 	</a></div>
 				 </ul>
 				 
 			</div>
@@ -59,7 +99,7 @@
 				  
 			</div>
 		</div>
-			<div class="Project cerc1 c1" onclick="foo()"> 
+			<div class="Project cerc1 c1" onclick="foo('pages/page1/page_teorie.html')"> 
 
   				<div class="Project-Pro ">
   				 
@@ -71,21 +111,23 @@
   					Teorie Grafuri Neorientate
   			 	</p>
 		</div>
-		<div class="Project Project2 cerc2 c2" onclick="foo1()">
+		<div class="Project Project2 cerc2 c2" onclick="foo('pages/page2/page_parcurgere.html')">
   			<div class="Project-Pro  Project-Pro-2 "></div>
   			<div class="Project-Pro2 "></div>
   			<p class="Project-name">
   				 Parcurgerea Grafurilor Neorientate
   			 </p>
 		</div>	
-		<div class="Project Project3 cerc3 c3">
+		<div class="Project Project3 cerc3 c3"
+		onclick="foo('pages/page3/page_ham.html')">
   			<div class="Project-Pro  Project-Pro-3 "></div>
   			<div class="Project-Pro2 "></div>
   			<p class="Project-name">
   				Graf Hamiltonian
   			 </p>
 		</div>	
-		<div class="Project Project4 cerc4 c4">
+		<div class="Project Project4 cerc4 c4"
+		onclick="foo('pages/page4/page_eul.html')">
   			<div class="Project-Pro  Project-Pro-4 "></div>
   			<div class="Project-Pro2 "></div>
   			<p class="Project-name">
@@ -105,14 +147,20 @@
 
 	 </div>
 	 <script type="text/javascript">
-	function foo()
+	function foo(linc)
 	{
-		 window.location.href = "pages/page1/page_teorie.html";
+		 window.location.href = linc;
 	}
-	function foo1()
-	{
-		 window.location.href = "pages/page2/page_parcurgere.html";
-	}
+
+
+	function myFunction() {
+		const atr = document.querySelector('dr');
+		 var element = document.getElementById("dr");
+		if(!element.classList.contains('style1'))
+    		element.classList.add("style1");
+    	else
+    		element.classList.remove("style1");
+}
 </script>
 </body>
 </html> 

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<div class="header">
+		<link rel="stylesheet" type="text/css" href="../page2/style2.css">
+		<link rel="stylesheet" type="text/css" href="../page1/style1.css">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+         <div>
+            <a href=" ../../index.html" style="font-size: 40px;">
+            Grafuri Neorientate
+            </a>
+         </div>
+  </div>
+
+  <style type="text/css">
+  	#content{
+  		margin-left: 50px;
+  	}
+  </style>
+</head>
+<body>
+ 	<img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Konigsberg_bridges.png" style="float: right; margin-right: 50px; margin-left: 10px;">
+ 	<div id="content">
+ 		<p>
+ 			În 1736, matematicianul elvețian Leonard Euler a rezolvat o problemă cunoscută astăzi ca “Problema celor șapte poduri din Königsberg”. Prin orașul Königsberg, azi Kaliningrad trece un râu pe care sunt două insule, acestea și malurile fiind unite prin poduri ca în imaginea din dreapta.
+ 		</p><img src="../../img/arrow.png" class="arr" onclick="arrow()" id="aaa">
+ 		<p>
+ 			Leonard Euler a demonstrat că nu este posibil ca o persoană să traverseze fiecare pod o singură dată. În onoarea sa, o categorie specială de grafuri se numesc 
+ 			<b>grafuri euleriene.</b>
+ 		</p>
+ 		<p>
+ 			<b>Definiții:</b>
+ 		</p>
+ 		<ul>
+ 			<li>
+ 				<p>	
+ 					Într-un graf neorientat, se numește 
+ 					<b>lanț eulerian</b> un lanț simplu în care apare fiecare muchie (fiind lanț simplu, fiecare muchie apare o singură dată).
+ 				</p>
+ 			</li>
+ 			<li>
+ 				<p>
+ 					Într-un graf neorientat, se numește 
+ 					<b>ciclu eulerian</b> un ciclu în care apare fiecare muchie.
+ 				</p>
+ 			</li>
+ 			<li>
+ 				<p>
+ 					Într-un graf neorientat, se numește
+ 					<b>ciclu eulerian</b> un ciclu în care apare fiecare muchie.
+ 				</p>
+ 			</li>
+ 		</ul>
+ 		<p>
+ 			<b>Exemplu:</b>
+ 		</p>
+ 		<img src="page4_photo/graf.png">
+ 		<p>
+ 			În graful de mai sus ciclul <span class="color">  (1 2 4 5 3 6 5 2 3 1)</span> este eulerian.
+ 		</p>
+ 		<p>
+ 			<b>Teoreme:</b>
+ 		</p>
+ 		<ul>
+ 			<li>
+ 				<p>
+ 					Un graf neorientat fără vârfuri izolate este eulerian dacă și numai dacă este conex și toate vârfurile au grad par.
+ 				</p>
+ 			</li>
+ 			<li>
+ 				<p>
+ 					Un graf neorientat fără vârfuri izolate conține un lanț eulerian, dacă și numai dacă este conex și toate vârfurile au grad par, mai puțin două. Aceste vârfuri vor fi extremitățile lanțului eulerian.
+ 				</p>
+ 			</li>
+ 		</ul>
+ 		<p>
+ 			Pentru determinarea unui ciclu eulerian se pot folos mai mulți algoritmi. Unul dintre aceștia este asemănător cu parcurgerea în adâncime. Vom folosi o stivă (eventual memoria STACK prin intermediul recursivității)
+ 		</p>
+ 		<ul>
+ 			<li>
+ 				<p>
+ 					adăugăm pe stivă un vârf oarecare – de exemplu  <span class="color">1</span>;
+ 				</p>
+ 			</li>
+ 			<li>
+ 				<p>
+ 					cât timp stiva nu este vidă
+ 				</p>
+ 				<ul>
+ 					<li>
+ 						<p>
+ 							fie <span class="color">k</span> – nodul din vârful stivei
+ 						</p>
+ 					</li>
+ 					<li>
+ 						<p>
+ 							determinăm nodurile <span class="color">x</span> adiacente cu <span class="color">k</span>. Eliminăm muchia <span class="color">[k,x]</span> și adăugăm nodul <span class="color">x</span> pe stivă (apel recursiv)
+ 						</p>
+ 						<ul>
+ 							<li>
+ 								<p>
+ 									continuăm cu nodul situat în vârful stivei
+ 								</p>
+ 							</li>
+ 						</ul>
+ 					</li>
+ 					<li>
+ 						<p>
+ 							adăugăm nodul <span class="color">k</span> într-o listă
+ 						</p>
+ 					</li>
+ 					<li>
+ 						<p>
+ 							eliminăm nodul <span class="color">k</span> din stivă
+ 						</p>
+ 					</li>
+ 				</ul>
+ 			</li>
+ 			<li>
+ 				<p>
+ 					lista construită reprezintă ciclu eulerian
+ 				</p>
+ 			</li>
+ 		</ul>
+ 		<p>
+ 			<b>Important:</b>
+ 		</p>
+ 		<ul>
+ 			<li>
+ 				<p>
+ 					la vizitarea unui vârf, acesta nu va fi marcat, pentru a permite revenirea în el;
+ 				</p>
+ 			</li>
+ 			<li>
+ 				<p>
+ 					finitudinea algoritmului este asigurată de faptul că muchiile se elimină din graf;
+ 				</p>
+ 			</li>
+ 		</ul>
+ 		<p>
+ 			<b>Secvență C++:</b>
+ 		</p>
+ 		<p>
+ 			Considerăm un graf cu n vârfuri, memorat prin intermediul matricei de adiacență, <span class="color">A[][]</span>. Tabloul <span class="color">L[]</span> reprezintă lista în care se memorează ciclul eulerian. Toate variabilele sunt globale:
+ 		</p>
+ 		<div class="color2" style="white-space: pre; text-align: left; padding: 20px; font-size: 25px;">
+void Euler(int k)
+{
+    for(int i = 1 ; i <= n ; i++)
+        if(A[k][i] == 1)
+        {
+            A[k][i] = A[i][k] = 0;
+            Euler(i);
+        }
+    L[++p] = k;
+}
+...
+Euler(1);
+...
+ 		</div>
+ 	<p>
+ 		Algoritmul de mai sus poate fi utilizat și pentru determinarea unui lanț eulerian. Parcurgerea trebuie să înceapă însă din unul dintre vârfurile cu grad impar.
+ 	</p>
+
+ 	</div>
+ 	 
+        <div class="bottom">
+      <p class="name">
+         <b>Dragan Valeriu</b>
+      </p>
+      <p>
+         Colegiul National de Informatica "Spiru Haret"
+      </p>
+      <p style="margin-bottom: 10px;">Proiect atestat   2020-2021</p>
+    </div>
+
+</body>
+</html>
