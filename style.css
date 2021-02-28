@@ -123,3 +123,16 @@ html{
      cursor: url("cursor/cursor2.cur"),auto;
  
  } 
+ .dropdown{
+    list-style: none;
+    padding: 0px;
+
+  }
+   .drop{
+    margin-top: 20px;
+    margin-right: -10px; 
+   }
+   .style1
+   {
+    display: none;
+   }
