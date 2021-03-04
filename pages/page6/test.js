@@ -105,7 +105,7 @@
       correctAnswer: "c"
     },
      {
-      question: "Intr-un graf neorientat cu 20 muchii, fiecare nod al grafului are gradul un numar nenul. Doar patru dintre noduri au gradul un numar par, restul nodurilor având gradele numere impare. Care este numarul maxim de noduri pe care poate sale aiba graful?",  
+      question: "Intr-un graf neorientat cu 20 muchii, fiecare nod al grafului are gradul un numar nenul. Doar patru dintre noduri au gradul un numar par, restul nodurilor avand gradele numere impare. Care este numarul maxim de noduri pe care poate sale aiba graful?",  
 
       answers: {
         a: "32",
