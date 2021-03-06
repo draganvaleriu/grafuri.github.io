@@ -5,7 +5,8 @@
 	<link rel="stylesheet" type="text/css" href="../page2/style2.css">
 	<link rel="stylesheet" type="text/css" href="../page1/style1.css">
    <link rel="shortcut icon" type="image/x-icon" href="../../img/icon.ico">
-	 
+	 <link rel="stylesheet" type="text/css" href="../../css/css1.css">
+    
 <div class="header" style="font-size: 40px;">
          <div>
             <a href=" ../../index.html">
@@ -32,10 +33,9 @@
       	 	font-size: 1.3em;
           margin-bottom: 30px;
       	}
-     .style1
-    {
-      display: none;
-    }
+     
+
+
       </style>
 </head>
 <body>
@@ -150,7 +150,7 @@
 0 0 1 1 0 </b>
 	 	</div>
 
-	 	<div class="sol"  onclick="myFunction('dr')"><b> Solutie</b> </div>
+	 	<div class="sol"  onclick="myFunction('dr','style1')"><b> Solutie</b> </div>
 	 	<div class="color2 style1" id="dr" style="white-space: pre;" ><b>
 #include < iostream >
 #include < fstream >
@@ -263,7 +263,7 @@ int main()
 2 3 4 
 </b>
 </div>
-    <div class="sol"  onclick="myFunction('dr1')"><b> Solutie</b> </div>
+    <div class="sol"  onclick="myFunction('dr1','style1')"><b> Solutie</b> </div>
 
     <div class="color2 style1 " id="dr1" style="white-space: pre;" ><b>
 #include < iostream>
@@ -362,7 +362,7 @@ Programul va afișa pe ecran valoarea 1 dacă matricea este de adiacență, sau 
 padding-bottom: 0px;">
 <b>1</b>
   </div>
- <div class="sol"  onclick="myFunction('dr2')"><b> Solutie</b> </div>
+ <div class="sol"  onclick="myFunction('dr2','style1')"><b> Solutie</b> </div>
 
     <div class="color2 style1 " id="dr2" style="white-space: pre;" ><b>
 #include < iostream>
@@ -405,27 +405,22 @@ int main()
 
    </div>
 	  <div class="bottom">
-      <p class="name">
-         <b>Dragan Valeriu</b>
+      <p class="name trans1" style="display: inline-block; margin-top: 30px; cursor: pointer; font-weight: bold;" onclick="add('im1','im2','style5')"  id="trans">
+            Dragan Valeriu  
       </p>
+      <img src="../../img/facebook.png" width="50px" style=" margin-top: 10px; margin-left: 10px; position: absolute; cursor: pointer;"
+      id="im1" class="style5 "  onclick="linc('https://www.facebook.com/profile.php?id=100008014441736')">
+      <img src="../../img/instagram.png" width="50px" style=" margin-top: 10px; margin-left: 70px; position: absolute; cursor: pointer;"
+      id="im2" class="style5 "  onclick="linc(' ')">
       <p>
          Colegiul National de Informatica "Spiru Haret"
       </p>
       <p style="margin-bottom: 10px;">Proiect atestat   2020-2021</p>
-
-
     </div>
+
+
 	 <script src="../../javascript/javascript_1.js"></script>
    <script src="../page2/javascript1.js"></script>
-   <script type="text/javascript">
-     function myFunction(nam) {
-    const atr = document.querySelector(nam);
-     var element = document.getElementById(nam);
-    if(!element.classList.contains('style1'))
-        element.classList.add("style1");
-      else
-        element.classList.remove("style1");
-}
-   </script>
+   <script src="../../javascript/java2.js"></script>
 </body>
 </html>
