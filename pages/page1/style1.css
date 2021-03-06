@@ -9,7 +9,9 @@ body{
  
  
 }
- 
+ a{
+ 	color: #551a8b;
+ }
 #menu{
 	margin-bottom: 0px;
 	width: 250px;

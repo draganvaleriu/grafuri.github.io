@@ -6,7 +6,9 @@ body{
 	background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
 	background-size: 2000px;
 }
-
+a{
+  color: #551a8b;
+}
 html{
   cursor: url("cursor/cursor1.cur"),auto;
 }
