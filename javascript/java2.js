@@ -1,3 +1,6 @@
+
+
+
 function myFunction(nam,clas) {
      
      var element = document.getElementById(nam);
@@ -5,9 +8,7 @@ function myFunction(nam,clas) {
         element.classList.add(clas);
       else
         element.classList.remove(clas);
-      var element2 = document.getElementById('trans');
-      
-
+       
 }
 function linc(adresa)
 {
