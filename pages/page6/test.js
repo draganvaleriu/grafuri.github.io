@@ -114,6 +114,16 @@
         d: "16"
       },
       correctAnswer: "b"
+    },
+    {
+      question:"Se considera un graf neorientat cu 50 noduri si 32 muchii. Care este numarul maxim de varfuri cu gradul 0 pe care le poate avea graful?",
+      answers: {
+        a: "40",
+        b: "45",
+        c: "41",
+        d: "50"
+      },
+      correctAnswer: "c"
     }
   ];
 
