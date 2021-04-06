@@ -8,11 +8,19 @@
     <link rel="stylesheet" type="text/css" href="../../css/css1.css">
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 	<div class="header">
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Cabin:700'>
+
+      <link rel="stylesheet" href="css/style.css">
          <div>
             <a href=" ../../index.html" style="font-size: 40px;">
             Grafuri Neorientate
             </a>
          </div>
+          <div>
+            <input onclick="f()" class="checkbox" type="checkbox" id="codepen"/>
+            <label for="codepen"></label>
+  
+            </div>
   </div>
 </head>
 <style type="text/css">
@@ -20,9 +28,9 @@
 		margin-left: 50px;
 	}
 </style>
-<body>
+<body id="bb">
 	<div id = "content">
-    <img src="../../img/arrow.png" class="arr" onclick="arrow()">
+     <div class="arr" id = "aaa" onclick="arrow()"> </div>
 		<p>
 			<b>Problema comis voiajorului</b> este o problemă celebră de informatică: Un comis-voiajor (agent comercial) trebuie viziteze <b>n</b> orașe. Cunoscându-se șoselele existente între orașe, să se determine o modalitate (toate modalitățile) prin care comis-voiajorul poate parcurge fiecare oraș o singură dată și se întoarce în orașul de plecare.
 		</p>
@@ -57,7 +65,7 @@
 		<p>
 			<b>Exemplu:</b>
 		</p>
-		<img src="page3_photo/g1.png" style="margin-left: 50px;">
+		<img src="page3_photo/graf1.png" style="margin-left: 50px;">
 		<p>
 			În graful de mai sus sunt evidențiate cu rosu muchiile care fac parte dintr-un ciclu hamiltonian: <span class="color"> (1, 2, 5, 4, 6, 3)</span>.
 		</p>

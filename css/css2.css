@@ -1,0 +1,29 @@
+.style1
+    {
+      display: none;
+    }
+    .style2
+    {
+     display: inline;
+     transform: translate(-20px);
+     transition: 2s;
+    }
+    .style3{
+      transform: translate(-40px);
+      transition: 1.5s;
+    }
+    .style4{
+     opacity: 1;
+     transform: translate(-20px);
+     transition: 2s;
+    }
+    .style5{
+    opacity: 0;
+    }
+    .trans1 :hover;
+    {
+     cursor: pointer;
+    }
+
+
+

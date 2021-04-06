@@ -6,6 +6,11 @@
 	<link rel="stylesheet" type="text/css" href="../page1/style1.css">
    <link rel="shortcut icon" type="image/x-icon" href="../../img/icon.ico">
 	 <link rel="stylesheet" type="text/css" href="../../css/css1.css">
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Cabin:700'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+
     
 <div class="header" style="font-size: 40px;">
          <div>
@@ -13,6 +18,11 @@
             Grafuri Neorientate
             </a>
          </div>
+          <div>
+            <input onclick="f()" class="checkbox" type="checkbox" id="codepen"/>
+            <label for="codepen"></label>
+  
+            </div>
       </div>
       <style type="text/css">
       	#menu ul li{
@@ -38,7 +48,7 @@
 
       </style>
 </head>
-<body>
+<body id="bb">
 	 
 		<div id = "menu">
             <ul >
@@ -61,7 +71,7 @@
                   </div>
                </li>
                <li>
-                  <div id="term" onclick="a(getElementById('aa'))">
+                  <div id="reprez" onclick="a(getElementById('trei'))">
                      <p >
                         <span>
                         Problema 3
@@ -74,10 +84,10 @@
 
            </ul>
 		</div>
-		<img src="../../img/arrow.png" class="arr" onclick="arrow()" id="aaa">
+		 
 	 <div id="content">
 
-
+<div class="arr" id = "aaa" onclick="arrow()"> </div>
 
 
 	 	<div class="decor" id="unu">
@@ -307,11 +317,11 @@ int main()
     </div>
 
 
-<div class="decor"   id="aa">
+<div class="decor"   id="trei">
       Problema 3
 </div>
 <p>
-      <b><span class="color">Cerinţa</span></b>
+      <b><span class="color" >Cerinţa</span></b>
 </p>
 <p>
 Dându-se o matrice de numere întregi cu n linii și n coloane, să se verifice dacă este sau nu matrice de adiacență asociată unui graf neorientat.

@@ -106,3 +106,9 @@ function b(pix)
 { 
 	window.scroll(0,pix);	 
 }
+
+
+
+
+
+

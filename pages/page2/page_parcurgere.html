@@ -7,15 +7,23 @@
 	<link rel="stylesheet" type="text/css" href="../page1/style1.css">
      <link rel="shortcut icon" type="image/x-icon" href="../../img/icon.ico">
       <link rel="stylesheet" type="text/css" href="../../css/css1.css">
+      <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Cabin:700'>
+
+      <link rel="stylesheet" href="css/style.css">
 	<div class="header">
          <div style="font-size: 40px;">
             <a href=" ../../index.html">
             Grafuri Neorientate
             </a>
          </div>
+         <div>
+            <input onclick="f()" class="checkbox" type="checkbox" id="codepen"/>
+            <label for="codepen"></label>
+  
+            </div>
       </div>
 </head>
-<body>
+<body id = "bb">
  <div id = "page">
          <div id = "menu">
             <ul >
@@ -47,7 +55,7 @@
             </ul>
          </div>
          <div id = "content">
-            <img src="../../img/arrow.png" class="arr" onclick="arrow()">
+              <div class="arr" id = "aaa" onclick="arrow()"> </div>
            <p>
            	Prin parcurgerea unui graf neorientat se înţelege examinarea în mod sistematic a vârfurilor, plecând dintr-un vârf dat <b>start </b>, astfel încât fiecare vârf accesibil din <b>start</b> pe muchii incidente două câte două să fie vizitat o singură dată. Trecerea de la un vârf <b>x</b> la altul se face prin examinarea, într-o anumită ordine a vecinilor săi.
            </p>

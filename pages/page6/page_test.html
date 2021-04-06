@@ -8,11 +8,20 @@
 	 <link rel="stylesheet" type="text/css" href="test.css">
      <link rel="stylesheet" type="text/css" href="../../css/css1.css">
 <div class="header" style="font-size: 40px;">
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Cabin:700'>
+
+      <link rel="stylesheet" href="css/style.css">
+
          <div>
             <a href=" ../../index.html">
             Grafuri Neorientate
             </a>
          </div>
+         <div>
+            <input onclick="f()" class="checkbox" type="checkbox" id="codepen"/>
+            <label for="codepen"></label>
+  
+            </div>
       </div>
       <style type="text/css">
       	#content{
@@ -42,7 +51,7 @@
 
       </style>
 </head>
-<body>
+<body id="bb">
  <div id="menu">
  	<ul>
  		<li>
@@ -52,9 +61,9 @@
  		</li>
  	</ul>
  </div>
- <img src="../../img/arrow.png" class="arr" onclick="arrow()" id="aaa">
+  
 <div id="content"> 
-
+<div class="arr" id = "aaa" onclick="arrow()"> </div>
 	<div class="decor">Testul 1</div>
 	<div id="test"> 
  		<div id="quiz"></div>
