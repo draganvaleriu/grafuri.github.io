@@ -20,6 +20,10 @@ body{
 	margin-left: 50px;
 	 
 }
+#content ul{
+  list-style-image: url('../img/list.png'); 
+ }
+
 #content{
 	 margin-left: 330px;
 	 margin-right: 80px;

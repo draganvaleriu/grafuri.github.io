@@ -7,8 +7,9 @@ window.scroll({
   top: 0,
   behavior: 'smooth'
 });
-
-
+	 
+}
+ 
 
 function myFunction(nam,clas) {
      
@@ -42,7 +43,7 @@ function linc(adresa)
      
 
   }
-}
+
  function f (){
 		let a = document.getElementById('bb');
 		 
@@ -239,3 +240,16 @@ function linc(adresa)
 			s2.src = "page1_photo/mat.png";
 		 }
 	}
+
+
+
+aaa.onmouseenter = function(){
+this.classList.add('it1');
+}
+
+aaa.onmouseleave = function(){
+setTimeout(function(){
+this.classList.remove('it1');
+}.bind(this),1000)
+}
+

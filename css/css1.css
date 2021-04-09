@@ -14,7 +14,11 @@ body{
     transition: 1.2s;
 
 }
- 
+
+#content ul{
+  list-style-image: url('../img/list.png'); 
+ }
+
  a{
     color: #551a8b;
  }
@@ -141,9 +145,30 @@ body{
     bottom: 30px;
     opacity: 0.5;
  }
+
+ @keyframes anim
+ {
+   0%{ transform: rotateY(30deg);  }
+   20%{transform: rotateY(60deg);}
+   40%{transform: rotateY(90deg);}
+   60%{transform: rotateY(120deg);}
+   80%{transform: rotateY(150deg);}
+   100%{transform: rotateY(180deg);}
+ }
  .arr:hover{
     opacity: 1;
     cursor: pointer;
+    
+ }
+ .ss{
+   transform: translateY(-10000px);
+   transition: 1.4s;
+ }
+ .it1{
+   animation: anim;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 2;
  }
  .sol{
 
