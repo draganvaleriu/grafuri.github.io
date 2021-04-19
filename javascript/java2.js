@@ -10,6 +10,8 @@ function myFunction(nam,clas) {
         element.classList.remove(clas);
        
 }
+
+  
 function linc(adresa)
 {
   window.location.replace(adresa);

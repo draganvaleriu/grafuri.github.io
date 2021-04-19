@@ -340,3 +340,6 @@ background: url('../img/moon.png');
   outline: 0px   slategrey;
   border-radius: 10px;
 }
+.color2 b{
+	color: black;
+}

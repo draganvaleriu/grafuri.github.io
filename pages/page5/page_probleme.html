@@ -79,7 +79,51 @@
                      </p>
                   </div>
                </li>
-               
+                <li>
+                  <div id="Matricea" onclick="a(getElementById('trei_1'))">
+                     <p >
+                        <span>
+                        Problema 4
+                        </span>
+                     </p>
+                  </div>
+               </li>
+               <li>
+                  <div id="muchii" onclick="a(getElementById('trei_2'))">
+                     <p >
+                        <span>
+                        Problema 5
+                        </span>
+                     </p>
+                  </div>
+               </li>
+               <li>
+                  <div id="vecini" onclick="a(getElementById('trei_3'))">
+                     <p >
+                        <span>
+                        Problema 6
+                        </span>
+                     </p>
+                  </div>
+               </li>
+                <li>
+                  <div id="vecini" onclick="a(getElementById('patru'))">
+                     <p >
+                        <span>
+                        Problema 7
+                        </span>
+                     </p>
+                  </div>
+               </li>
+                <li>
+                  <div id="vecini" onclick="a(getElementById('cinci'))">
+                     <p >
+                        <span>
+                        Problema 8
+                        </span>
+                     </p>
+                  </div>
+               </li>
                
 
            </ul>
@@ -117,19 +161,19 @@
 	 	<ul>
 	 		<li>
 	 			<p>
-	 				<b>1 ≤ n ≤ 100</b>
+	 				 1 ≤ n ≤ 100 
 	 			</p>
 	 		</li>
 	 		<li>
 	 			<p>
-	 				<b>1 ≤ i , j ≤ n</b>
+	 				 1 ≤ i , j ≤ n 
 	 			</p>
 	 		</li>
 	 		<li>
 	 			<p>
-	 				<b>
+	 			 
 	 					muchiile se pot repeta în fișierul de intrare
-	 				</b>
+	 				 
 	 			</p>
 	 		</li>
 	 	</ul>
@@ -227,18 +271,18 @@ int main()
 <ul>
       <li>
         <p>
-            <b>1 ≤ n ≤ 100</b>
+            1 ≤ n ≤ 100 
         </p>
       </li>
       <li>
         <p>
-           <b>1 ≤ i , j ≤ n</b>
+           1 ≤ i , j ≤ n  
         </p>
       </li>
       <li>
-        <p>
+         
            muchiile se pot repeta în fișierul de intrare
-        </p>
+         
       </li>
     </ul>
 
@@ -345,7 +389,7 @@ Programul va afișa pe ecran valoarea 1 dacă matricea este de adiacență, sau 
 <ul>
       <li>
         <p>
-            <b>3 ≤ n ≤ 100</b>
+             3 ≤ n ≤ 100 
         </p>
       </li>
       <li>
@@ -413,6 +457,593 @@ int main()
     </b>
   </div>
 
+    <div class="decor" id="trei_1">
+      Problema 4
+    </div>
+    <p>
+      <b><span class="color"  >Cerinţa</span></b>
+    </p>
+    <p>
+      Să se afișeze vârfurile vizitate în urma parcurgerii în adâncime (Depth First Search) a grafului, pornind din vârful X.
+    </p>
+    <p>
+      <b><span class="color" >Date de intrare</span></b>
+    </p>
+    <p>
+      Fişierul de intrare dfs.in conţine pe prima linie trei numere naturale n, m, X, având următoarea semnificație: n este numărul de noduri, m este numărul de muchii din graf, iar X este vârful din care se începe parcurgerea. Următoarele m linii conțin câte două numere i j cu semnificația că există muchie între i și j .
+    </p>
+    <p>
+      <b><span class="color" >Date de ieşire</span></b>
+    </p>
+    <p>
+      Fişierul de ieşire dfs.out va conţine pe prima linie vârfurile vizitate în urma parcurgerii în adâncime a grafului, aceasta începând din vârful X.
+    </p>
+    <p>
+      <b><span class="color" >Restricţii şi precizări</span></b>
+    </p>
+    <ul>
+      <li>
+        <p>
+           2 <= n <= 100 
+        </p>
+      </li>
+      <li>
+        <p>
+           1 <= m <= n*(n-1)/2  
+        </p>
+      </li>
+      <li>
+        <p>
+          <b>
+            dacă în timpul parcurgerii, la un moment dat vârful curent al grafului este Y, vecinii nevizitați ai lui Y se vor analiza în ordine crescătoare.
+          </b>
+        </p>
+      </li>
+    </ul>
+      <p>
+  <span class="color"><b>Exemplu:</b></span>
+</p>
+<p><b>Intrare(dfs.in)</b></p>
+<div class="color2" style=" white-space: pre;"><b> 
+7 8 3
+1 2
+1 3
+1 6
+2 4
+2 5
+3 6
+3 7
+4 6
+</b>
+</div>
+<p>
+  <b>Iesire(dfs.out)</b>
+</p>
+<div class="color2" style=" white-space: pre; padding-top: 10px;
+padding-bottom: 0px;">
+<b>3 1 2 4 6 5 7 </b>
+  </div>
+<div class="sol"  onclick="myFunction('dr4','style1')"><b> Solutie</b> </div>
+
+    <div class="color2 style1 " id="dr4" style="white-space: pre;" ><b> 
+
+#include < iostream>
+#include < fstream>
+#include < cassert>
+using namespace std;
+
+ifstream fin("dfs.in");
+ofstream fout("dfs.out");
+
+int n , a[105][105], v[205];
+
+void dfs(int X)
+{
+    fout << X << " ";
+    v[X] = 1;
+    for(int i =1 ; i <= n ; ++i)
+        if(a[X][i] == 1 && v[i] == 0)
+            dfs(i);
+}
+
+int main()
+{
+    int i , j , m, X;
+    fin >> n >> m >> X;
+    while(m > 0)
+    {
+        fin >> i >> j;
+        a[i][j] = a[j][i] = 1;
+        m --;
+    }
+    dfs(X);
+    return 0;
+}
+    </b>
+  </div>
+
+
+
+
+ <div class="decor" id="trei_2">
+      Problema 5
+    </div>
+    <p>
+      <b><span class="color"  >Cerinţa</span></b>
+    </p>
+    <p>
+     Se dă lista muchiilor unui graf neorientat. Să se afișeze componentele conexe ale acestui graf.
+    </p>
+    <p>
+      <b><span class="color" >Date de intrare</span></b>
+    </p>
+    <p>
+      Fişierul de intrare componenteconexe.in conţine pe prima linie numărul n, reprezentând numărul de vârfuri ale grafului. Fiecare dintre următoarele linii conține câte o pereche de numere i j, cu semnificația că există muchie între i și j.
+    </p>
+    <p>
+      <b><span class="color" >Date de ieşire</span></b>
+    </p>
+    <p>
+      Fişierul de ieşire componenteconexe.out va conţine pe prima linie numărul de componente conexe nrc. Fiecare dintre următoarele nrc linii va conține în ordine crescătoare, separate printr-un spațiu, vârfurile din componenta conexă curentă. Ordinea de afișare a componentelor conexe va fi cea crescătoare a vârfului cu eticheta minimă din fiecare componentă.
+    </p>
+    <p>
+      <b><span class="color" >Restricţii şi precizări</span></b>
+    </p>
+    <ul>
+      <li>
+        <p>
+          1 ≤ n ≤ 100
+        </p>
+      </li>
+      <li>
+        <p>
+          1 ≤ i , j ≤ n
+        </p>
+      </li>
+      <li>
+        <p>
+          în fișierul de intrare muchiile se pot repeta
+        </p>
+      </li>
+    </ul>
+    <p>
+  <span class="color"><b>Exemplu:</b></span>
+</p>
+<p><b>Intrare</b></p>
+<div class="color2" style=" white-space: pre;"><b> 
+5
+1 4 
+3 5
+2 4
+</b>
+</div>
+<p>
+  <b>Iesire</b>
+</p>
+<div class="color2" style=" white-space: pre; padding-top: 10px;
+padding-bottom: 0px;">
+<b>2
+1 2 4
+3 5</b>
+  </div>
+
+  <div class="sol"  onclick="myFunction('dr5','style1')"><b> Solutie</b> </div>
+
+    <div class="color2 style1 " id="dr5" style="white-space: pre;" ><b>
+#include < iostream>
+#include < fstream>
+using namespace std;
+
+ifstream fin("componenteconexe.in");
+ofstream fout("componenteconexe.out");
+
+int n , a[105][105];
+int x[105], // coada pentru parcurgerea in latime
+    v[105]; // vector caracteristic care precizeaza daca un varf a fost sau nu vizitat
+
+
+void bf(int varf, int nrc)
+{
+    int st, dr;
+    st = dr = 1;
+    v[varf] = nrc;
+    x[1] = varf;
+    while(st <= dr)
+    {
+        int k = x[st];
+        for(int i = 1; i <= n ; ++i)
+            if(v[i] == 0 && a[k][i] == 1)
+            {
+                dr ++;
+                v[i] = nrc;
+                x[dr] = i;
+            }
+        st ++;
+    }
+}
+
+int main()
+{
+    int i , j;
+    fin >> n;
+    while(fin >> i >> j)
+    {
+        a[i][j] = a[j][i] = 1;
+    }
+
+    int nrc = 0;
+    for(int i=1; i <= n ;++i)
+        if(v[i] == 0 )
+        {
+            nrc ++;
+            bf(i , nrc);
+        }
+    fout << nrc << endl;
+    for(int i=1 ; i<= nrc ; ++i)
+    {
+        for(int j = 1; j<= n ;++j)
+            if(v[j] == i)
+                fout << j << " ";
+        fout << endl;
+    }
+    return 0;
+}
+    </b>
+  </div>
+
+
+    <div class="decor" id="trei_3">
+      Problema 6
+    </div>
+    <p>
+      <b><span class="color"  >Cerinţa</span></b>
+    </p>
+    <p>
+     Se dă lista muchiilor unui graf neorientat. Să se determine numărul minim de muchii care trebuie adăugate pentru ca graful să devină conex, precum și un set de asemenea muchii.
+    </p>
+    <p>
+      <b><span class="color" >Date de intrare</span></b>
+    </p>
+    <p>
+     Fişierul de intrare componenteconexe1.in conţine pe prima linie numărul n, reprezentând numărul de vârfuri ale grafului. Fiecare dintre următoarele linii conține câte o pereche de numere i j, cu semnificația că există muchie între i și j.
+    </p>
+    <p>
+      <b><span class="color" >Date de ieşire</span></b>
+    </p>
+    <p>
+      Fişierul de ieşire componenteconexe1.out va conţine pe prima linie numărul NR de muchii ce trebuie adăugate. Fiecare dintre următoarele NR linii va conține câte o muchie x y, care trebuie adăugată pentru ca graful să devină conex.
+    </p>
+    <p>
+      <b><span class="color" >Restricţii şi precizări</span></b>
+    </p>
+    <ul>
+      <li>
+        <p>
+         1 ≤ n ≤ 100
+        </p>
+      </li>
+      <li>
+        <p>
+      1 ≤ i , j ≤ n
+        </p>
+      </li>
+      <li>
+        <p>
+          <b>
+            muchiile se pot repeta în fișierul de intrare
+          </b>
+        </p>
+      </li>
+    </ul>
+    <p>
+  <span class="color"><b>Exemplu:</b></span>
+</p>
+<p><b>Intrare</b></p>
+<div class="color2" style=" white-space: pre;"><b> 
+5
+1 4 
+3 5
+2 4
+</b>
+</div>
+<p>
+  <b>Iesire</b>
+</p>
+<div class="color2" style=" white-space: pre; padding-top: 10px;
+padding-bottom: 0px;">
+<b>
+  1
+1 3
+</b>
+  </div>
+
+  <div class="sol"  onclick="myFunction('dr6','style1')"><b> Solutie</b> </div>
+
+    <div class="color2 style1 " id="dr6" style="white-space: pre;" ><b>
+#include < iostream>
+#include < fstream>
+using namespace std;
+
+ifstream fin("componenteconexe1.in");
+ofstream fout("componenteconexe1.out");
+
+int n , a[105][105];
+int x[105], // coada pentru parcurgerea in latime
+    v[105]; // vector caracteristic care precizeaza daca un varf a fost sau nu vizitat
+
+
+void bf(int varf, int nrc)
+{
+    int st, dr;
+    st = dr = 1;
+    v[varf] = nrc;
+    x[1] = varf;
+    while(st <= dr)
+    {
+        int k = x[st];
+        for(int i = 1; i <= n ; ++i)
+            if(v[i] == 0 && a[k][i] == 1)
+            {
+                dr ++;
+                v[i] = nrc;
+                x[dr] = i;
+            }
+        st ++;
+    }
+}
+
+int main()
+{
+    int i , j;
+    fin >> n;
+    while(fin >> i >> j)
+    {
+        a[i][j] = a[j][i] = 1;
+    }
+
+    int nrc = 0;
+    for(int i=1; i <= n ;++i)
+        if(v[i] == 0 )
+        {
+            nrc ++;
+            bf(i , nrc);
+        }
+    fout << nrc-1 << endl;
+    for(int i = 2; i<=nrc ; i++)
+    {
+        int varf = 0;
+        for(int j = 1 ; j <= n && varf == 0 ; ++j)
+            if(v[j] == i)
+                varf = j;
+        fout << 1 << " " << varf << endl;
+    }
+    return 0;
+}
+
+    </b>
+  </div>
+
+
+    <div class="decor" id="patru">
+      Problema7
+    </div>
+    <p>
+      <b><span class="color"  >Cerinţa</span></b>
+    </p>
+    <p>
+      Se dă lista muchiilor unui graf neorientat cu n vârfuri, etichetate de la 1 la n. Din acest graf se elimină toate vârfurile care au gradul minim. Să se determine câte muchii va avea subgraful obținut.
+    </p>
+    <p>
+      <b><span class="color" >Date de intrare</span></b>
+    </p>
+    <p>
+      Fişierul de intrare subgraf1.in conţine pe prima linie numărul n, reprezentând numărul de vârfuri ale grafului. Fiecare dintre următoarele linii conține câte o pereche de numere i j, cu semnificația că există muchie între i și j.
+
+
+    </p>
+    <p>
+      <b><span class="color" >Date de ieşire</span></b>
+    </p>
+    <p>
+     Fişierul de ieşire subgraf1.out va conţine pe prima linie numărul M de muchii ale subgrafului obținut.
+    </p>
+    <p>
+      <b><span class="color" >Restricţii şi precizări</span></b>
+    </p>
+    <ul>
+      <li>
+        <p>
+          <b>1 ≤ n ≤ 100</b>
+        </p>
+      </li>
+      <li>
+        <p>
+          <b>1 ≤ i , j ≤ n</b>
+        </p>
+      </li>
+      <li>
+        <p>
+          <b>
+            muchiile se pot repeta în fișierul de intrare
+          </b>
+        </p>
+      </li>
+    </ul>
+    <p>
+  <span class="color"><b>Exemplu:</b></span>
+</p>
+<p><b>Intrare</b></p>
+<div class="color2" style=" white-space: pre;"><b> 
+5
+1 5
+2 5
+3 5
+2 3
+4 2
+</b>
+</div>
+<p>
+  <b>Iesire</b>
+</p>
+<div class="color2" style=" white-space: pre; padding-top: 10px;
+padding-bottom: 0px;">
+<b>3</b>
+  </div>
+
+  <div class="sol"  onclick="myFunction('dr7','style1')"><b> Solutie</b> </div>
+
+    <div class="color2 style1 " id="dr7" style="white-space: pre;" ><b>
+ #include < iostream>
+#include < fstream>
+#include < cassert>
+using namespace std;
+
+ifstream fin("subgraf1.in");
+ofstream fout("subgraf1.out");
+
+int n , a[105][105], g[105];
+
+int main()
+{
+    int i , j;
+    fin >> n;
+    while(fin >> i >> j)
+    {
+        a[i][j] = a[j][i] = 1;
+    }
+
+    for(int i = 1 ; i <= n ; ++ i){
+        g[i] = 0;
+        for(int j = 1 ; j <= n ; ++ j)
+            if(a[i][j] == 1)
+                g[i] ++;
+    }
+
+    int gmin = n+1;
+    for(int i = 1 ; i <= n ; ++ i)
+        if(g[i] < gmin)
+            gmin = g[i];
+
+    for(int i = 1 ; i <= n ; ++ i)
+        if(g[i] == gmin)
+            for(int j = 1 ; j <= n ; ++ j)
+                a[i][j] = a[j][i] = 0;
+
+    int nrm = 0;
+    for(int i = 1 ; i <= n ; ++ i)
+        for(int j = i + 1; j <= n; ++ j)
+            if(a[i][j] == 1)
+                nrm ++;
+
+    fout << nrm;
+
+    return 0;
+}
+    </b>
+  </div>
+
+
+    <div class="decor" id="cinci">
+      Problema 8
+    </div>
+    <p>
+      <b><span class="color"  >Cerinţa</span></b>
+    </p>
+    <p>
+     Se dau mai multe grafuri neorientate, prin matricea de adiacență. Să se verifice despre fiecare graf dacă este complet.
+    </p>
+    <p>
+      <b><span class="color" >Date de intrare</span></b>
+    </p>
+    <p>
+      Fişierul de intrare graf_complet.in conţine pe prima linie numărul de grafuri G. Pentru fiecare dintre cele G grafuri se dă n și apoi matricea de adiacență, formată din n linii și n coloane.
+    </p>
+    <p>
+      <b><span class="color" >Date de ieşire</span></b>
+    </p>
+    <p>
+      Fişierul de ieşire graf_complet.out va conţine G linii. Pe fiecare dintre ele se va afla mesajul DA sau NU, după cum graful corespunzător este sau nu complet.
+    </p>
+    <p>
+      <b><span class="color" >Restricţii şi precizări</span></b>
+    </p>
+    <ul>
+      <li>
+        <p>
+          <b>1 ≤ G ≤ 5</b>
+        </p>
+      </li>
+      <li>
+        <p>
+          <b>1 ≤ n ≤ 50</b>
+        </p>
+      </li>
+       
+    </ul>
+    <p>
+  <span class="color"><b>Exemplu:</b></span>
+</p>
+<p><b>Intrare</b></p>
+<div class="color2" style=" white-space: pre;"><b> 
+2
+3
+0 1 1
+1 0 1
+1 1 0
+4
+0 1 1 1
+1 0 0 1
+1 0 0 1
+1 1 1 0
+</b>
+</div>
+<p>
+  <b>Iesire</b>
+</p>
+<div class="color2" style=" white-space: pre; padding-top: 10px;
+padding-bottom: 0px;">
+<b>DA
+NU</b>
+  </div>
+
+  <div class="sol"  onclick="myFunction('dr8','style1')"><b> Solutie</b> </div>
+
+    <div class="color2 style1 " id="dr8" style="white-space: pre;" ><b>
+#include < iostream>
+#include < fstream>
+using namespace std;
+
+ifstream fin("graf_complet.in");
+ofstream fout("graf_complet.out");
+
+int G, n , a[105][105];
+
+int main()
+{
+    fin >> G;
+    for( ; G ; G--)
+    {
+        fin >> n;
+        for(int i = 1 ; i <= n ; ++i)
+            for(int j = 1 ; j <= n ; ++j)
+                fin >> a[i][j];
+        
+        bool complet = true;
+        for(int i = 1 ; i < n ; ++i)
+            for(int j = i + 1 ; j <= n ; ++j)
+                if(a[i][j] == 0 || a[j][i] == 0)
+                    complet = false;
+        if(complet)
+            fout << "DA\n";
+        else
+            fout << "NU\n";
+    }
+
+    return 0;
+}
+    </b>
+  </div>
+
 
    </div>
 	  <div class="bottom">
@@ -435,3 +1066,116 @@ int main()
    
 </body>
 </html>
+
+<!--
+
+
+
+    <div class="decor" id="unu">
+      Problema 1
+    </div>
+    <p>
+      <b><span class="color"  >Cerinţa</span></b>
+    </p>
+    <p>
+      Se dă lista muchiilor unui graf neorientat. Să se afișeze matricea de adiacență a grafului
+    </p>
+    <p>
+      <b><span class="color" >Date de intrare</span></b>
+    </p>
+    <p>
+      Fişierul de intrare <b>adiacenta.in</b> conţine pe prima linie numerele <b>n</b> și <b>m</b>, reprezentând numărul de vârfuri ale grafului și numărul de muchii date în continuare. Fiecare dintre următoarele m linii conține câte o pereche de numere <b>i j</b>, cu semnificația că există muchie între <b>i</b> și <b>j</b>.
+    </p>
+    <p>
+      <b><span class="color" >Date de ieşire</span></b>
+    </p>
+    <p>
+      Fişierul de ieşire <b>adiacenta.out</b> va conţine n linii, pe fiecare linie fiind câte <b>n</b> valori separate prin exact un spațiu, reprezentând matricea de adiacență a grafului dat.
+    </p>
+    <p>
+      <b><span class="color" >Restricţii şi precizări</span></b>
+    </p>
+    <ul>
+      <li>
+        <p>
+          <b>1 ≤ n ≤ 100</b>
+        </p>
+      </li>
+      <li>
+        <p>
+          <b>1 ≤ i , j ≤ n</b>
+        </p>
+      </li>
+      <li>
+        <p>
+          <b>
+            muchiile se pot repeta în fișierul de intrare
+          </b>
+        </p>
+      </li>
+    </ul>
+    <p>
+  <span class="color"><b>Exemplu:</b></span>
+</p>
+<p><b>Intrare</b></p>
+<div class="color2" style=" white-space: pre;"><b> 
+4
+0 1 1 0
+1 0 0 0
+1 0 0 1
+0 0 1 0 
+</b>
+</div>
+<p>
+  <b>Iesire</b>
+</p>
+<div class="color2" style=" white-space: pre; padding-top: 10px;
+padding-bottom: 0px;">
+<b>1</b>
+  </div>
+
+  <div class="sol"  onclick="myFunction('dr3','style1')"><b> Solutie</b> </div>
+
+    <div class="color2 style1 " id="dr3" style="white-space: pre;" ><b>
+#include < iostream>
+
+using namespace std;
+
+int  verifica(int a[100][100],int n)
+{
+    for(int i=1;i<=n;i++)
+        for(int j=1;j<=n;j++)
+    {
+        if(a[i][j] != 1 && a[i][j] != 0)
+            return 0;
+        else
+            if(a[i][j] == 1)
+                if(a[i][j] != a[j][i])
+                    return 0;
+        if(i == j)
+            if(a[i][j] != 0 )
+                return 0;
+    }
+ return 1;
+}
+
+int main()
+{
+    int a[100][100],n;
+    cin >> n;
+    for(int i=1;i<=n;i++)
+        for(int j=1;j<=n;j++)
+    cin >> a[i][j];
+ cout << verifica(a,n);
+
+    return 0;
+}
+
+    </b>
+  </div>
+
+
+
+
+
+  -->
