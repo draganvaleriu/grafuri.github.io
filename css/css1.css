@@ -344,7 +344,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rg
        background-image: url("https://www.slcare.info/img/rotate.png");
       background-repeat: no-repeat;
       background-position: center;
-      background-position-y: 600px;
+      background-position-y: 300px;
       background-color:  #212121;
       }
   }
