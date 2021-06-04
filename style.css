@@ -77,10 +77,10 @@ html{
 }
 
 .bottom{
-	position: relative;
-	align-items: center;
-	top:500px;
-	left:300px;
+	position: absolute;
+	bottom:-1000px;
+
+	left:33%;
 	text-align: center;
 	width:400px;
 	border-top: 1px solid black;
@@ -138,3 +138,17 @@ html{
    {
     display: none;
    }
+   /* For portrait, we want the tool bar on top */
+
+@media screen and (orientation: portrait) {
+  body{
+    display: none;
+  }
+  html {
+     background-image: url("https://www.slcare.info/img/rotate.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 600px;
+    background-color: #212121;
+    }
+}

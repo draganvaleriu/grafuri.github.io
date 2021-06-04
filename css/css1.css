@@ -334,3 +334,17 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rg
   outline: 0px solid slategrey;
   border-radius: 10px;
 }
+
+@media screen and (orientation: portrait) {
+    body{
+      display: none;
+    }
+    html {
+        transition: 0s;
+       background-image: url("https://www.slcare.info/img/rotate.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-position-y: 600px;
+      background-color:  #212121;
+      }
+  }
