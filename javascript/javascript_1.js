@@ -253,3 +253,4 @@ this.classList.remove('it1');
 }.bind(this),1000)
 }
 
+ 
